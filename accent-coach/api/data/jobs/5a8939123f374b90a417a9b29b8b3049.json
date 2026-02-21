@@ -1,0 +1,252 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:27:34.021282Z",
+  "job_id": "5a8939123f374b90a417a9b29b8b3049",
+  "completed_at": "2025-12-19T23:27:35.786142Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Aewan",
+        "start": 0.0,
+        "end": 1.42,
+        "confidence": 0.341,
+        "score": 57,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_b02eb4dbc2f44f4ba62d7594bc87b012",
+        "tts_id": "tts_a86cb1907fe94546b620ff63761be55e"
+      },
+      {
+        "word": "is",
+        "start": 1.42,
+        "end": 1.64,
+        "confidence": 0.961,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_bde7fd8387b443a7bbfde9293ba1ce2a"
+      },
+      {
+        "word": "very",
+        "start": 1.64,
+        "end": 1.84,
+        "confidence": 0.784,
+        "score": 79,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_8405824de66f4d96b925f68def087b9f",
+        "tts_id": "tts_23155cb0e9c045bf8c85e2d7008ca37b"
+      },
+      {
+        "word": "sweet",
+        "start": 1.84,
+        "end": 2.34,
+        "confidence": 0.935,
+        "score": 84,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_2617e4b38e444763b020c65a5432d1b8",
+        "tts_id": "tts_a277042269974555ae1583927078ef53"
+      },
+      {
+        "word": "with",
+        "start": 2.34,
+        "end": 2.7,
+        "confidence": 0.882,
+        "score": 78,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_66987f7f5b7b4da08be41d05618765eb",
+        "tts_id": "tts_042a65db24124c2994ba39b68b7c1cd5"
+      },
+      {
+        "word": "dents",
+        "start": 2.7,
+        "end": 3.08,
+        "confidence": 0.569,
+        "score": 87,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_b366ecfda8ab404fa6e87f6ae5731c10"
+      },
+      {
+        "word": "and",
+        "start": 3.08,
+        "end": 3.4,
+        "confidence": 0.76,
+        "score": 91,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_4ca7bf8edb714f2b8ce7ba6bddec887e"
+      },
+      {
+        "word": "he",
+        "start": 3.4,
+        "end": 4.24,
+        "confidence": 0.86,
+        "score": 93,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_ed8d9bfa099d4c4481061c2954e6091d"
+      },
+      {
+        "word": "is",
+        "start": 4.24,
+        "end": 4.64,
+        "confidence": 0.79,
+        "score": 91,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_78b82dd1cfe3492abdce41173443bbd6"
+      },
+      {
+        "word": "reading",
+        "start": 4.64,
+        "end": 4.9,
+        "confidence": 0.981,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_837d6e4e46464f4999b9bc2f78e5fcb9",
+        "tts_id": "tts_ee928c6fb8b34ee7b7feb38f60ad8128"
+      },
+      {
+        "word": "in",
+        "start": 4.9,
+        "end": 5.22,
+        "confidence": 0.967,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_28176cd7c3ff4c329a27b8ccf87a18b4"
+      },
+      {
+        "word": "class",
+        "start": 5.22,
+        "end": 5.52,
+        "confidence": 0.761,
+        "score": 91,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_bca4d796c57444dba53f4e071e9f4288"
+      },
+      {
+        "word": "10th",
+        "start": 5.52,
+        "end": 6.24,
+        "confidence": 0.82,
+        "score": 77,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_a42daece712f43a5b6b369d5ea9deb8a",
+        "tts_id": "tts_9f49e41a5f834656b34307bc2fe85e65"
+      },
+      {
+        "word": "in",
+        "start": 6.24,
+        "end": 6.84,
+        "confidence": 0.772,
+        "score": 91,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_8bc6a87a94db45f6bc75732a63270bf6"
+      },
+      {
+        "word": "Northview",
+        "start": 6.84,
+        "end": 7.36,
+        "confidence": 0.342,
+        "score": 42,
+        "issue": "th_sound",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_b5ea38ed6fd34a679ade7b6f879fc241",
+        "tts_id": "tts_228bb5b90c5740caa4f5290b89de0010"
+      },
+      {
+        "word": "School,",
+        "start": 7.36,
+        "end": 7.78,
+        "confidence": 0.619,
+        "score": 78,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_6ae6f883eccc4fe0baf926e68ac907f8",
+        "tts_id": "tts_f58808c9f8e545509b616ecc15f06ef1"
+      },
+      {
+        "word": "I",
+        "start": 8.12,
+        "end": 10.24,
+        "confidence": 0.918,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_bb014ec793434b2c9e7a22d1e48a4ee2"
+      },
+      {
+        "word": "love",
+        "start": 10.24,
+        "end": 10.5,
+        "confidence": 0.969,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_46c9721f17c449f6baee9d84f5551d9b"
+      },
+      {
+        "word": "him",
+        "start": 10.5,
+        "end": 10.68,
+        "confidence": 0.991,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_967c2a6256ba493db0fa7b62b7ad17a3"
+      },
+      {
+        "word": "very",
+        "start": 10.68,
+        "end": 10.96,
+        "confidence": 0.998,
+        "score": 83,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_c85ff5ee12f14e1c9700f42b113de790",
+        "tts_id": "tts_62bf94987d064cedb4c65e912a70b86f"
+      },
+      {
+        "word": "much.",
+        "start": 10.96,
+        "end": 11.4,
+        "confidence": 1.0,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "5a8939123f374b90a417a9b29b8b3049_9e7708a10ba745289098d861d149205a"
+      }
+    ],
+    "summary": {
+      "overall_score": 84.6,
+      "top_issues": [
+        {
+          "label": "vowel_length",
+          "count": 3
+        },
+        {
+          "label": "th_sound",
+          "count": 3
+        },
+        {
+          "label": "v_w",
+          "count": 2
+        }
+      ],
+      "practice": [
+        "Aewan",
+        "very",
+        "sweet"
+      ]
+    },
+    "text": "Aewan is very sweet with dents and he is reading in class 10th in Northview School, I love him very much."
+  }
+}

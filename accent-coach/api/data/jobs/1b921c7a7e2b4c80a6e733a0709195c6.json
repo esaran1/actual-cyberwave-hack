@@ -1,0 +1,98 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:30:53.684643Z",
+  "job_id": "1b921c7a7e2b4c80a6e733a0709195c6",
+  "completed_at": "2025-12-19T23:30:56.669366Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "wow",
+        "start": 0.0,
+        "end": 1.32,
+        "confidence": 0.26,
+        "score": 44,
+        "issue": "v_w",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_82b8fe2faf2141b4931201c65a54cd22",
+        "tts_id": "tts_e7a2bf8486254f2fac5fc1370ad19063"
+      },
+      {
+        "word": "any",
+        "start": 1.32,
+        "end": 1.88,
+        "confidence": 0.092,
+        "score": 52,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_9f8b25ed266d4a6c90ec32e21d4af557",
+        "tts_id": "tts_d5428b9ca1834566a9c916a11dd755c7"
+      },
+      {
+        "word": "you're",
+        "start": 1.88,
+        "end": 2.3,
+        "confidence": 0.411,
+        "score": 72,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_599ee51e6140419bb5228253b0657b29",
+        "tts_id": "tts_426cf72ce13b4d7fbea7c1f66ab5a9d5"
+      },
+      {
+        "word": "looking",
+        "start": 2.3,
+        "end": 2.6,
+        "confidence": 0.993,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_65faa6766fc5447da36d0a40b0aabde7",
+        "tts_id": "tts_359abf8cc65e4d3698641cb9c55b5ce4"
+      },
+      {
+        "word": "like",
+        "start": 2.6,
+        "end": 2.88,
+        "confidence": 0.934,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_be860902822a48dfb9e73f5ea6a5f692"
+      },
+      {
+        "word": "him",
+        "start": 2.88,
+        "end": 3.18,
+        "confidence": 0.324,
+        "score": 57,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1b921c7a7e2b4c80a6e733a0709195c6_9d78229cbd6b4091bbee34247e89abc5",
+        "tts_id": "tts_bec9c0194c0344e2964ebbd6c1420a64"
+      }
+    ],
+    "summary": {
+      "overall_score": 67.3,
+      "top_issues": [
+        {
+          "label": "low_confidence",
+          "count": 3
+        },
+        {
+          "label": "v_w",
+          "count": 1
+        },
+        {
+          "label": "vowel_length",
+          "count": 1
+        }
+      ],
+      "practice": [
+        "wow",
+        "any",
+        "you're"
+      ]
+    },
+    "text": "wow any you're looking like him"
+  }
+}

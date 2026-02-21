@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "created_at": "2026-02-21T22:07:37.089302Z",
+  "type": "text",
+  "job_id": "text_431a07c89b8f49de83d113311895ffc6",
+  "error": "Failed to generate script and feedback. Check that GOOGLE_GEMINI_API_KEY is set."
+}

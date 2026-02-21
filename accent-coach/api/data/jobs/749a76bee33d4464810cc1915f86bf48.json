@@ -1,0 +1,76 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:38:49.330409Z",
+  "job_id": "749a76bee33d4464810cc1915f86bf48",
+  "completed_at": "2025-12-19T23:38:51.134293Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Hi,",
+        "start": 0.54,
+        "end": 0.94,
+        "confidence": 0.643,
+        "score": 88,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "749a76bee33d4464810cc1915f86bf48_6a1c32c2e4644f9390eb9b454942f33c"
+      },
+      {
+        "word": "my",
+        "start": 1.1,
+        "end": 1.2,
+        "confidence": 0.965,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "749a76bee33d4464810cc1915f86bf48_b6d52f1a9d7743e788ba462fc62e302c"
+      },
+      {
+        "word": "name",
+        "start": 1.2,
+        "end": 1.4,
+        "confidence": 0.999,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "749a76bee33d4464810cc1915f86bf48_b2bc7ca884f34870a68fa36a5e0868fb"
+      },
+      {
+        "word": "is",
+        "start": 1.4,
+        "end": 1.58,
+        "confidence": 0.996,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "749a76bee33d4464810cc1915f86bf48_7d4d344621cb43ad9a18b6746880f5e5"
+      },
+      {
+        "word": "Triline.",
+        "start": 1.58,
+        "end": 1.98,
+        "confidence": 0.371,
+        "score": 59,
+        "issue": "r_l",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "749a76bee33d4464810cc1915f86bf48_2c1b61259ad74e06968ec751523fd3eb",
+        "tts_id": "tts_569026fa558f4c6f92e1baa816bc3a6c"
+      }
+    ],
+    "summary": {
+      "overall_score": 86.4,
+      "top_issues": [
+        {
+          "label": "r_l",
+          "count": 1
+        }
+      ],
+      "practice": [
+        "Triline.",
+        "Triline.",
+        "Hi,"
+      ]
+    },
+    "text": "Hi, my name is Triline."
+  }
+}

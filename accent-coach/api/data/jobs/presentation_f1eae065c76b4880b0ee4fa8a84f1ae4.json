@@ -1,0 +1,53 @@
+{
+  "status": "done",
+  "created_at": "2025-12-23T15:56:51.120754Z",
+  "type": "presentation",
+  "job_id": "presentation_f1eae065c76b4880b0ee4fa8a84f1ae4",
+  "completed_at": "2025-12-23T15:57:10.115162Z",
+  "result": {
+    "slides": {
+      "count": 12,
+      "filename": "Applications for Tensorflow.pptx"
+    },
+    "video": {
+      "duration_seconds": 166.51,
+      "filename": "presentation-video.webm",
+      "media_type": "video"
+    },
+    "coaching": {
+      "pacing": {
+        "slides_per_minute": 4.32,
+        "label": "fast"
+      },
+      "tips": [
+        "Your pace is balanced. Keep the steady rhythm.",
+        "Video analysis unavailable\u2014use a recorded video for posture and gesture feedback."
+      ]
+    },
+    "analysis": {
+      "audio": {
+        "duration_seconds": 165.32,
+        "word_count": 410,
+        "wpm": 148.8,
+        "pause_ratio": 0.213,
+        "long_pauses": 13,
+        "filler_count": 2,
+        "filler_rate": 0.005
+      },
+      "video": {
+        "supported": false,
+        "gesture_rate": null,
+        "posture_score": null,
+        "gaze_variance": null
+      },
+      "transcript": {
+        "text": "Hello, my name is Evan and today I want to share with you a presentation I made called Applications for TensorFlow. So what are some examples of TensorFlow applications? Number one, autocomplete, image classification, object detection, pose estimation, speech recognition, gesture recognition, segmentation, and text classification. Where is TensorFlow useful? Most of the time, TensorFlow applications are advanced and large AA undertakings in the realms of machine learning and deep learning. TensorFlow can help in creating very large neural networks featuring multiple layers. The most common TensorFlow uses are perception, classification, discovery, creation, understanding and prediction. TensorFlow can also be used by developers to help create data full graphs or structures which can be used to describe the movement of data through graphs or collections of processing nodes. The foundations on which TensorFlow was created was the objectives for solving machine learning and deep learning problems. Now I will show you the top five use cases of TensorFlow. Number one, time series algorithms. TensorFlow can be used in time series analysis in which it can model and predict trends, anomalies or patterns and data sequences. This is beneficial for the finance, healthcare, and weather forecasting industries. To text detection and classification, TensorFlow can be used to detect and define text with the images. This makes it a precious tool for applications such as reading license plates, recognizing handwritten tests or analyzing documents to extract information. Number three, image recognition. TensorFlow, if effortlessly handles image recognition tasks, help me in revolutionizing industries like healthcare and security by completing tasks such as spatial recognition, object detection and even medical image analysis. For video detection, TensorFlow can be used to detect objects, track motion, and analyze video concept, enhancing surveillance systems, autonomous vehicles, and video analytics. Five, voice recognition applications. TensorFlow's powerful deep learning capabilities make it a viable choice for the development of voice recognition systems from virtual assistants to voice control smart devices. These attributes help enhance user experiences across many platforms. And why should you use TensorFlow? Number one, TensorFlow is an open source system and can support the development of any type of deep learning use case. Number two, graphical representation can help decrease the tediousness of developing any type of system using TensorFlow. And number three, TensorFlow can also offer a benefit of compatibility with different languages such as Python, C++, Ruby, C Sharp, and JavaScript. This enables users to work in environments that they are comfortable with.",
+        "language": "en"
+      },
+      "tips": [
+        "Your pace is balanced. Keep the steady rhythm.",
+        "Video analysis unavailable\u2014use a recorded video for posture and gesture feedback."
+      ]
+    }
+  }
+}

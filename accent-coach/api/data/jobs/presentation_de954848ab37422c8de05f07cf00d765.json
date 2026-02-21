@@ -1,0 +1,51 @@
+{
+  "status": "done",
+  "created_at": "2025-12-23T16:10:40.778961Z",
+  "type": "presentation",
+  "job_id": "presentation_de954848ab37422c8de05f07cf00d765",
+  "completed_at": "2025-12-23T16:11:03.856848Z",
+  "result": {
+    "slides": {
+      "count": 12,
+      "filename": "Applications for Tensorflow.pptx"
+    },
+    "video": {
+      "duration_seconds": 164.17,
+      "filename": "presentation-video.webm",
+      "media_type": "video"
+    },
+    "coaching": {
+      "pacing": {
+        "slides_per_minute": 4.39,
+        "label": "fast"
+      },
+      "tips": [
+        "Your pace is balanced. Keep the steady rhythm."
+      ]
+    },
+    "analysis": {
+      "audio": {
+        "duration_seconds": 160.4,
+        "word_count": 406,
+        "wpm": 151.9,
+        "pause_ratio": 0.24,
+        "long_pauses": 14,
+        "filler_count": 1,
+        "filler_rate": 0.002
+      },
+      "video": {
+        "supported": true,
+        "gesture_rate": 0.0,
+        "posture_score": 0.973,
+        "gaze_variance": 0.025
+      },
+      "transcript": {
+        "text": "Hello, my name is Evan, today I want to share with you my presentation called Applications of TensorFlow. So, what are some examples of TensorFlow applications, autocomplete, image classification, object retention, post estimation, speech recognition, gesture recognition, segmentation, and text classification? And why is TensorFlow useful? Most of the time TensorFlow applications are advanced in large AI undertakings in the realm of machine learning and deep learning. Rural has used the framework for applications that include automatic email response generation, image classification and optical character recognition, as well as drug discovery application that the company worked on with researchers from Stanford University. TensorFlow can help in creating very large neural networks featuring multiple layers. TensorFlow can also be used by developers to help create data flow graphs or structures which can be used to describe the movement of data through graphs or collections of processing nodes. The foundations on which TensorFlow was created was the objectives for solving machine learning and deep learning problems. The most popular scenarios in which TensorFlow was used range from different industries. Now I will show you top five use cases of TensorFlow. Number one, time series algorithms. TensorFlow can be used in time series analysis in which you can model and predict trends, anomalies, or patterns, and data sequences. Number two, text detection and classification. TensorFlow can be used to detect and define text within images. This makes it a precious tool for applications such as reading license plates, recognizing header and text, for analyzing documents to extract information. Number three, image recognition. TensorFlow effortlessly handles, effortlessly handles image recognition tasks, helping and revolutionizing industries like healthcare and security by completing tasks such as facial recognition, object section, and even medical image analysis. For video detection, TensorFlow can be used to detect objects, track motion, and analyze video content, enhancing surveillance systems, autonomous vehicles, and video analytics. Five, test voice recognition applications. TensorFlow's powerful deep learning capabilities make it a great choice for the development of voice recognition systems from virtual assistance to voice control smart devices. And why should you use TensorFlow? Firstly, TensorFlow is an open -source system and could support the development of any type of deep learning use case. Secondly, graphical representation can help decrease the tediousness of any developing any type of system using TensorFlow. Lastly, TensorFlow also offers a benefit of compatibility with different languages such as Python, C++, Ruby, C Sharp, and JavaScript.",
+        "language": "en"
+      },
+      "tips": [
+        "Your pace is balanced. Keep the steady rhythm."
+      ]
+    }
+  }
+}

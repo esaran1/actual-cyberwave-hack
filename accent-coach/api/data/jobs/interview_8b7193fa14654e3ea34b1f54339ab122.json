@@ -1,0 +1,71 @@
+{
+  "status": "done",
+  "type": "interview",
+  "created_at": "2026-02-21T22:18:34.007918Z",
+  "job_info": {
+    "company_name": "Meta",
+    "job_position": "Software Engineer",
+    "company_mission": ""
+  },
+  "qualifications": "Shivam Bansal +1 (470) 989 6893 \u2022 shivambansal0605@gmail.com EDUCATION Northview High School (GPA: 98)\tExpected Graduation: 2027 Relevant Courses: AP Computer Science Principles, AP Computer Science Applications, Georgia Tech CS 1331 SKILLS/LANGUAGES (Proficient) Python/Java Programming, Web Development (HTML, CSS, JavaScript), Data Analysis EXPERIENCE Honeywell Leadership Challenge Academy, US Space and Rocket Center, Alabama - Trainee\tOctober 2025 Collaborated with students from around the world on engineering and leadership challenges, applying analytical thinking and problem-solving to real-world STEM scenarios Developed programming, problem-solving, and decision-making skills in a fast-paced academic environment Eco Scholars - Co-Founder, Co-President  https://earthboundscholars.netlify.app/\tDecember 2023 - Present Founded and led an environmental nonprofit dedicated to sustainability education and community impact Planned and organized recycling initiatives, research competitions, and community outreach events Recycled 1000+ kgs of paper and 100+ kgs of plastic in partnership with 3 schools and 6 organizations EXTRACURRICULARS CricketCoach: AI Cricket Coach Tool - Lead Developer\tAug 2025 \u2013Present Developed an AI-powered coaching tool that uses video analysis and machine learning to deliver personalized feedback that helps improve players\u2019 skills Implemented the tool in Northview High School\u2019s cricket team practices, coaching 150+ students at no cost Contributed to a 2nd-place finish at the 2025 State Cricket Championships Won 1st Place at the Fulton County Student Technology Challenge (FCSTC) and advanced to the Georgia Student Technology Competition (GASTC) for Web and Mobile Apps Computer Science Honor Society - President\tJan 2025\u2013Present Led the creation of a fully funded computer science lab with 20 computers at a public school in Delhi, India Designed a computer science curriculum for 200+ students with no prior CS experience, started initiatives in underrepresented communities that were aimed at expanding access to technology for underserved students Organized county-wide hackathons with 100+ participants, facilitated mentorship sessions and workshops Rice University Precollege Program of Computer Engineering - Participant\tDecember 2025 Completed intensive college-level computer engineering coursework and hands-on projects in programming, hardware, and engineering principles and won the Rice University Precollege Scholarship Award ($900) Developed a culminating capstone project under professional mentorship from AI architects ACHIEVEMENTS/AWARDS President of Gavel\u2019s Toastmasters Club and Club Contest Winner\t2023-2026 AP Scholar with Honors\t2025 Super Honor Roll\t2023-2025 Founder of School\u2019s Pickleball Club and Johns Creek Pickleball Association\t2024-2026 MVP and Captain/President of School\u2019s Cricket Team\t2024-2026",
+  "questions": [
+    "Why do you want to work at Meta?",
+    "What experience do you have that relates to Software Engineer?",
+    "Tell me about a time you worked as part of a team. What was your role?",
+    "Describe a situation where you had to deal with a difficult customer or coworker. How did you handle it?",
+    "Why are you interested in this role at our company?",
+    "What does good customer service mean to you?",
+    "Tell me about your relevant experience for this position."
+  ],
+  "answers": [
+    {
+      "question": "Why do you want to work at Meta?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_0"
+    },
+    {
+      "question": "What experience do you have that relates to Software Engineer?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_1"
+    },
+    {
+      "question": "Tell me about a time you worked as part of a team. What was your role?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_2"
+    },
+    {
+      "question": "Describe a situation where you had to deal with a difficult customer or coworker. How did you handle it?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_3"
+    },
+    {
+      "question": "Why are you interested in this role at our company?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_4"
+    },
+    {
+      "question": "What does good customer service mean to you?",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_5"
+    },
+    {
+      "question": "Tell me about your relevant experience for this position.",
+      "transcript": "",
+      "audio_id": "interview_8b7193fa14654e3ea34b1f54339ab122_answer_6"
+    }
+  ],
+  "job_id": "interview_8b7193fa14654e3ea34b1f54339ab122",
+  "completed_at": "2026-02-21T22:20:09.587417Z",
+  "result": {
+    "summary": "Some answers were brief or unclear. Practice giving 1\u20132 minute answers with specific examples.",
+    "score": 1,
+    "improvements": [
+      "Give longer answers\u2014aim for 2\u20133 sentences with examples.",
+      "Speak clearly and at a moderate pace.",
+      "Use the STAR method: Situation, Task, Action, Result.",
+      "Give specific examples from your experience.",
+      "Keep answers focused\u20142\u20133 minutes per question.",
+      "Show enthusiasm for the role and company."
+    ]
+  }
+}

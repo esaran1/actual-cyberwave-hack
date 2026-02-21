@@ -1,0 +1,325 @@
+{
+  "status": "done",
+  "created_at": "2025-12-20T22:09:58.075658Z",
+  "job_id": "1184525fbce14302a83a293f4171afa4",
+  "completed_at": "2025-12-20T22:10:07.602005Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Hello,",
+        "start": 0.6800000000000013,
+        "end": 1.24,
+        "confidence": 0.845,
+        "score": 92,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_b50d40fefa724817a55a224a0d4d8231"
+      },
+      {
+        "word": "my",
+        "start": 1.78,
+        "end": 2.3,
+        "confidence": 0.949,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_6a9a975280954c328f5d41031c6e9780"
+      },
+      {
+        "word": "name",
+        "start": 2.3,
+        "end": 2.68,
+        "confidence": 0.998,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_9d1726ee78304cdf98e788e0a0d72088"
+      },
+      {
+        "word": "is",
+        "start": 2.68,
+        "end": 2.94,
+        "confidence": 0.995,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_38569e5159524f19bc4693891b687ace"
+      },
+      {
+        "word": "Levin,",
+        "start": 2.94,
+        "end": 3.18,
+        "confidence": 0.285,
+        "score": 56,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_28eabd2808cf458abf1f8794e2018819",
+        "tts_id": "tts_b04ac04b663943d392c30a9d824316de"
+      },
+      {
+        "word": "today",
+        "start": 3.8,
+        "end": 3.96,
+        "confidence": 0.918,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_ce34e3d127ce4af28a1f63b68010f23c"
+      },
+      {
+        "word": "I",
+        "start": 3.96,
+        "end": 4.16,
+        "confidence": 0.931,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_d02790ed66444eb49320a2ac704bf88d"
+      },
+      {
+        "word": "want",
+        "start": 4.16,
+        "end": 4.3,
+        "confidence": 0.768,
+        "score": 79,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_a72f8bcc4ca84c86b7af557c76d218e7",
+        "tts_id": "tts_14427b76656e462cb873c0ad1e819803"
+      },
+      {
+        "word": "to",
+        "start": 4.3,
+        "end": 4.42,
+        "confidence": 0.987,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_0b9820f696d447b48452b368eac3836e"
+      },
+      {
+        "word": "share",
+        "start": 4.42,
+        "end": 4.56,
+        "confidence": 0.997,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_9b398ee0c7dd44f38c7436298049362d"
+      },
+      {
+        "word": "with",
+        "start": 4.56,
+        "end": 4.74,
+        "confidence": 0.99,
+        "score": 80,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_fc68cfb2370c4386939701264dfc2b81",
+        "tts_id": "tts_db870436bd3f465194a4365553aaca45"
+      },
+      {
+        "word": "you",
+        "start": 4.74,
+        "end": 4.88,
+        "confidence": 0.996,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_dc3b5a35a0e04f26976daa8f453ad20a"
+      },
+      {
+        "word": "one",
+        "start": 4.88,
+        "end": 5.06,
+        "confidence": 0.786,
+        "score": 91,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_4522414659f54fb69a5bc212a887c5b5"
+      },
+      {
+        "word": "of",
+        "start": 5.06,
+        "end": 5.18,
+        "confidence": 0.967,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_31f05876e91c446b939cad29e0e10648"
+      },
+      {
+        "word": "my",
+        "start": 5.18,
+        "end": 5.28,
+        "confidence": 0.994,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_c7373350092244f1aff3aa6266c320d9"
+      },
+      {
+        "word": "attempts",
+        "start": 5.28,
+        "end": 5.62,
+        "confidence": 0.872,
+        "score": 93,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_acbfedad7b684a5bbae1f3e1b4a3ab2c"
+      },
+      {
+        "word": "at",
+        "start": 5.62,
+        "end": 5.92,
+        "confidence": 0.97,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_e381889835174726b71657f910cb3700"
+      },
+      {
+        "word": "exploring",
+        "start": 5.92,
+        "end": 6.54,
+        "confidence": 0.987,
+        "score": 83,
+        "issue": "r_l",
+        "tip": "Keep /r/ curled slightly and /l/ with the tongue touching the ridge just behind the teeth.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_872bda76d5e1414f960f28fbead3538a",
+        "tts_id": "tts_4dd3232452da48fea3118863ee176e2f"
+      },
+      {
+        "word": "how",
+        "start": 6.54,
+        "end": 6.9,
+        "confidence": 0.975,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_83f5a587622b4f78a689cbe2909343ce"
+      },
+      {
+        "word": "computer",
+        "start": 6.9,
+        "end": 7.54,
+        "confidence": 0.905,
+        "score": 84,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_f2ad2e7b5894492aa5c0670cfe090a91",
+        "tts_id": "tts_9f89b1d8ea01408081b3ce7ef878c3a1"
+      },
+      {
+        "word": "science",
+        "start": 7.54,
+        "end": 7.94,
+        "confidence": 0.998,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_e4a61e828ba44258b86f757927225684",
+        "tts_id": "tts_107fd697ed9e4a09bb920be504aa2528"
+      },
+      {
+        "word": "can",
+        "start": 7.94,
+        "end": 8.1,
+        "confidence": 0.978,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_ddfd045570204edb90b7ab9e405b68d4"
+      },
+      {
+        "word": "intersect",
+        "start": 8.1,
+        "end": 8.5,
+        "confidence": 0.992,
+        "score": 85,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_a4e9f582dcbf4f1090311432e5e678a9",
+        "tts_id": "tts_6ab80a48433a47a88eab59f9637f3270"
+      },
+      {
+        "word": "with",
+        "start": 8.5,
+        "end": 8.72,
+        "confidence": 0.984,
+        "score": 80,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_5634594345ae4cdea38a1b657e4c5214",
+        "tts_id": "tts_969ea7fa1a474a6fbb526a7051ae2228"
+      },
+      {
+        "word": "the",
+        "start": 8.72,
+        "end": 8.8,
+        "confidence": 0.471,
+        "score": 58,
+        "issue": "th_sound",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_bdd7c85954894faf8b90107a49045898",
+        "tts_id": "tts_850dda7e34d34300b483cc31ac8e2ca3"
+      },
+      {
+        "word": "real",
+        "start": 8.8,
+        "end": 9.08,
+        "confidence": 0.988,
+        "score": 83,
+        "issue": "r_l",
+        "tip": "Keep /r/ curled slightly and /l/ with the tongue touching the ridge just behind the teeth.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_bf335b98dd07414b8442f939c8f18ed0",
+        "tts_id": "tts_69cba89d0af84dde8aedfcfa7bed441c"
+      },
+      {
+        "word": "world",
+        "start": 9.08,
+        "end": 9.42,
+        "confidence": 0.845,
+        "score": 80,
+        "issue": "r_l",
+        "tip": "Keep /r/ curled slightly and /l/ with the tongue touching the ridge just behind the teeth.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_4be5469a3ddf4827a6b5bfb55c2f4405",
+        "tts_id": "tts_929f7b77520e4cb18a8f7bfb1359b11b"
+      },
+      {
+        "word": "problems.",
+        "start": 9.42,
+        "end": 10.06,
+        "confidence": 0.884,
+        "score": 81,
+        "issue": "r_l",
+        "tip": "Keep /r/ curled slightly and /l/ with the tongue touching the ridge just behind the teeth.",
+        "clip_id": "1184525fbce14302a83a293f4171afa4_bafa515566f042f58e42a8297b604cdc",
+        "tts_id": "tts_cce0571ebfc4485ebc6d1d2b5b8b65d3"
+      }
+    ],
+    "summary": {
+      "overall_score": 87.2,
+      "top_issues": [
+        {
+          "label": "r_l",
+          "count": 4
+        },
+        {
+          "label": "th_sound",
+          "count": 3
+        },
+        {
+          "label": "stress",
+          "count": 2
+        }
+      ],
+      "practice": [
+        "Levin,",
+        "want",
+        "with"
+      ]
+    },
+    "text": "Hello, my name is Levin, today I want to share with you one of my attempts at exploring how computer science can intersect with the real world problems."
+  }
+}

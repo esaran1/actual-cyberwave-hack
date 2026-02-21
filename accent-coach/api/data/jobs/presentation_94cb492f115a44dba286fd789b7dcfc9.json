@@ -1,0 +1,67 @@
+{
+  "status": "done",
+  "created_at": "2025-12-24T17:58:03.687792Z",
+  "type": "presentation",
+  "job_id": "presentation_94cb492f115a44dba286fd789b7dcfc9",
+  "completed_at": "2025-12-24T17:58:07.066748Z",
+  "result": {
+    "slides": {
+      "count": 12,
+      "filename": "Applications for Tensorflow.pptx"
+    },
+    "video": {
+      "duration_seconds": 11.26,
+      "filename": "presentation-video.webm",
+      "media_type": "video"
+    },
+    "coaching": {
+      "pacing": {
+        "slides_per_minute": 63.94,
+        "label": "fast"
+      },
+      "tips": [
+        "Your pace is slow. Tighten transitions to keep energy up.",
+        "Reduce filler words by pausing silently instead of filling gaps."
+      ]
+    },
+    "analysis": {
+      "audio": {
+        "duration_seconds": 10.72,
+        "word_count": 12,
+        "wpm": 67.2,
+        "pause_ratio": 0.024,
+        "long_pauses": 0,
+        "filler_count": 1,
+        "filler_rate": 0.083
+      },
+      "video": {
+        "supported": true,
+        "gesture_rate": 0.0,
+        "posture_score": 0.917,
+        "gaze_variance": 0.032
+      },
+      "transcript": {
+        "text": "Hello, I would like to share with you many applications for TensorFlow.",
+        "language": "en"
+      },
+      "slides_text": [
+        "Applications for Tensorflow By: Evan Saran",
+        "Examples of Tensorflow applications Autocomplete. l. \nImage classification. \nObject detection. \nPose estimation. \nSpeech recognition. \nGesture recognition. \nSegmentation. \nText classification.",
+        "Where Tensorflow is Useful Most of the time, Tensorflow applications are advanced and large AI undertakings in the realms of machine learning and deep learning. Google has used the framework for applications that include automatic email response generation, image classification and optical character recognition, as well as drug-discovery application that the company worked on with researchers from Stanford University.\nTensorflow can help in creating very large neural networks featuring multiple layers. The most common Tensorflow uses are perception, classification, discovery, creation, understanding, and prediction.",
+        "Continued Tensorflow can be used by developers to help create dataflow graphs or structures which can be used to describe the movement of data through graphs or collections of processing nodes.\nThe foundations on which Tensorflow was created was the objectives for solving machine learning and deep learning problems.  The most popular scenarios in which Tensorflow is used range from different industries, including e-commerce, social networks, and healthcare. The business applications of Tensorflow include image analysis, creation of intelligent chatbots, natural language processing, and data generation.\nNow I will show you the top five use cases of Tensorflow.",
+        "Time Series Algorithms Tensorflow can be used in time series analysis, in which it can model and predict trends, anomalies, or patterns in data sequences. This is beneficial for the finance, healthcare, and weather forecasting industries.",
+        "2. Text Detection and Classification Tensorflow can be used to detect and define text within images. This makes it a precious took for applications such as reading license plates, recognizing handwritten text, or analyzing documents to extract information.",
+        "3. Image Recognition Tensorflow effortlessly handles image recognition tasks, helping and revolutionizing  industries like healthcare and security by completing tasks such as facial recognition, object detection, and even medical image analysis.",
+        "4. Video Detection Tensorflow can be used to detect objects, track motion, and analyze video content, enhancing surveillance systems, autonomous vehicles, and video analytics.",
+        "5. Voice Recognition Applications Tensorflow\u2019s powerful deep learning capabilities make it a viable choice for the development of voice recognition systems, from virtual assistants to voice-controlled smart devices. These attributes help enhance user experiences across many platforms.",
+        "Time Series Algorithms Time series algorithms are another use case of Tensorflow. Time series algorithms help in the analysis of time series data. The top Tensorflow use cases in time series algorithms help in obtaining meaningful statistics from time series data. For example, Tensorflow can use time series data to predict the stock market. In addition, the deep learning framework can help in generating forecasts for non-specific time periods alongside generating alternative versions of time series. Common applications of time series algorithms created with Tensorflow are used in recommendation engines.  Popular platforms such as Netflix, Amazon, and Google use deep learning to offer recommendations to users. As a result of this deep learning, the application could provide accurate recommendations which pertain to the user\u2019s interests. The Tensorflow deep learning framework could empower recommendation engines to recommend movies or TV shows based on your interests. The use of Tensorflow for creating time series algorithms can also help support similar use cases in other industries. Deep learning can also help finance, governance, security, and accounting with the attributes of predictive analytics, resource planning, and risk identification.",
+        "Why should you use Tensorflow? Tensorflow is an open-source system and could support the development of any type of deep learning use case.  Another standout trait of Tensorflow is directed to the advantage of data visualization, which is also used to help debug nodes. As a result of this, you don\u2019t have to review the entire code thoroughly to resolve the issues with neural networks.\n\nGraphical representation can help decrease the tediousness of developing any type of system using Tensorflow.\n\nTensorflow also offers the benefit  of compatibility with different languages such as Python, C+++,  Ruby, C#, and JavaScript. This enables users to work in environments that they are comfortable with.",
+        "Citations: https://101blockchains.com/top-tensorflow-use-cases/#:~:text=TensorFlow%20can%20help%20in%20creating,creation%2C%20understanding%2C%20and%20prediction.\n\nhttps://www.youtube.com/watch?v=oZikw5k_2FM&t=137s"
+      ],
+      "tips": [
+        "Your pace is slow. Tighten transitions to keep energy up.",
+        "Reduce filler words by pausing silently instead of filling gaps."
+      ]
+    }
+  }
+}

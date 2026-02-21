@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    @apply min-h-screen bg-[radial-gradient(circle_at_top,_#e0edff,_#f8fafc_55%)] font-sans text-slate-900 antialiased;
+    background-size: 140% 140%;
+    animation: ambient-shift 18s ease-in-out infinite;
+  }
+}
+
+@keyframes ambient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

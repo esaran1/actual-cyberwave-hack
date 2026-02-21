@@ -1,0 +1,318 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:24:22.942265Z",
+  "job_id": "e70e7432464c45be9484aa62c63e0a32",
+  "completed_at": "2025-12-19T23:24:26.440798Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "I",
+        "start": 0.5999999999999996,
+        "end": 1.08,
+        "confidence": 0.938,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_c424f5cc55a84f7caa06ec85177234a2"
+      },
+      {
+        "word": "had",
+        "start": 1.08,
+        "end": 1.26,
+        "confidence": 0.93,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_509df164961a45c693e8d2ae47f0d3a6"
+      },
+      {
+        "word": "political",
+        "start": 1.26,
+        "end": 1.72,
+        "confidence": 0.957,
+        "score": 85,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_dedb55473fc44dde96aa15ab961fe446",
+        "tts_id": "tts_eed1397e647c452d9bf65bfa8d85ab2b"
+      },
+      {
+        "word": "science.",
+        "start": 1.72,
+        "end": 2.32,
+        "confidence": 0.973,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_c2b8023bfbf64f59a5356c83e553b298",
+        "tts_id": "tts_151d3d1a5a40409fb9415c56797468dd"
+      },
+      {
+        "word": "I",
+        "start": 2.52,
+        "end": 2.66,
+        "confidence": 0.994,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_ae5050a536364cb2a3096393b6b4c591"
+      },
+      {
+        "word": "did",
+        "start": 2.66,
+        "end": 2.78,
+        "confidence": 0.995,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_ff3be1c6a5b64a37bf1b7a531e137d30"
+      },
+      {
+        "word": "my",
+        "start": 2.78,
+        "end": 2.98,
+        "confidence": 0.992,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_7c1cab7559f444d29e838617f72beee6"
+      },
+      {
+        "word": "master's",
+        "start": 2.98,
+        "end": 3.54,
+        "confidence": 0.666,
+        "score": 89,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_700ae07e283d44be9a9c5fcaebcd1dae"
+      },
+      {
+        "word": "in",
+        "start": 3.54,
+        "end": 3.62,
+        "confidence": 0.994,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_a0e70fc629cc4c9292102a5ab352474d"
+      },
+      {
+        "word": "political",
+        "start": 3.62,
+        "end": 3.84,
+        "confidence": 0.965,
+        "score": 85,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_9d24282dff0948a78db09e2b73231c5f",
+        "tts_id": "tts_b11841296b934a8ca3a6038f31c2de96"
+      },
+      {
+        "word": "science",
+        "start": 3.84,
+        "end": 4.5,
+        "confidence": 0.995,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_f918605b05e446769ef49a22280f5180",
+        "tts_id": "tts_29cf854d36cb457e8191db1a166e325a"
+      },
+      {
+        "word": "for",
+        "start": 4.5,
+        "end": 4.74,
+        "confidence": 0.557,
+        "score": 87,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_7c7c62de71e348378c3137a327164df1"
+      },
+      {
+        "word": "and",
+        "start": 4.74,
+        "end": 4.88,
+        "confidence": 0.719,
+        "score": 90,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_da616fad5c9949c18045250f37273aa1"
+      },
+      {
+        "word": "policy,",
+        "start": 4.88,
+        "end": 5.3,
+        "confidence": 0.425,
+        "score": 62,
+        "issue": "stress",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_6fbf55021c334f2183d8113ce5dc6e1e",
+        "tts_id": "tts_06d41023e50841958301b71d750fe001"
+      },
+      {
+        "word": "comparative",
+        "start": 5.42,
+        "end": 5.64,
+        "confidence": 0.38,
+        "score": 61,
+        "issue": "stress",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_f16aa1d2b0c744cda01374a372cc4862",
+        "tts_id": "tts_e06019ebd2884faaaa3064cbd386a1af"
+      },
+      {
+        "word": "policy,",
+        "start": 5.64,
+        "end": 6.18,
+        "confidence": 0.642,
+        "score": 78,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_ede0597aaf6645cb99c90ac82cf7d153",
+        "tts_id": "tts_44f6c3ec004b4657add9983b72a21ccb"
+      },
+      {
+        "word": "politics,",
+        "start": 6.4,
+        "end": 6.88,
+        "confidence": 0.83,
+        "score": 82,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_5831b2273d5648dd913a58b5b5e80390",
+        "tts_id": "tts_9b291b6a66984b1db61badea549c1ed7"
+      },
+      {
+        "word": "invest",
+        "start": 7.14,
+        "end": 7.36,
+        "confidence": 0.107,
+        "score": 53,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_de854fc72961417599e2154df42421c2",
+        "tts_id": "tts_5b2b2f9a2eda422cb55f20118a30fa6d"
+      },
+      {
+        "word": "in",
+        "start": 7.36,
+        "end": 7.56,
+        "confidence": 0.699,
+        "score": 89,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_b7f34144ec2f49a780bcb3abf9b84e49"
+      },
+      {
+        "word": "political",
+        "start": 7.56,
+        "end": 7.88,
+        "confidence": 0.996,
+        "score": 85,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_dc95b772b9044ba0ad64cba684d1d77d",
+        "tts_id": "tts_e5b06276c12f4b31a42dc579ddce1a13"
+      },
+      {
+        "word": "thinkers.",
+        "start": 7.88,
+        "end": 8.4,
+        "confidence": 0.975,
+        "score": 80,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_b542cd18fe4046c8bbd26fb0d1f57f0f",
+        "tts_id": "tts_3f984046ddf846139c2b9097a2f0677e"
+      },
+      {
+        "word": "That",
+        "start": 9.46,
+        "end": 9.94,
+        "confidence": 0.971,
+        "score": 80,
+        "issue": "th_sound",
+        "tip": "Place your tongue lightly between your teeth for TH sounds and add a soft airflow.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_afc7992a10434d8fa51d2ea85b5acbcb",
+        "tts_id": "tts_dd21176d48cf4192bbe3130c4e2aea8a"
+      },
+      {
+        "word": "was",
+        "start": 9.94,
+        "end": 10.12,
+        "confidence": 0.987,
+        "score": 83,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_aa6ec13340ad47eda9fd049117622911",
+        "tts_id": "tts_f7c11ec7258d414db146a400adb49866"
+      },
+      {
+        "word": "my",
+        "start": 10.12,
+        "end": 10.36,
+        "confidence": 0.998,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_6b404ce31e2245868bc211d51da3c4ee"
+      },
+      {
+        "word": "subjective",
+        "start": 10.36,
+        "end": 10.96,
+        "confidence": 0.03,
+        "score": 41,
+        "issue": "stress",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_08a784733b6343bba918132139d31cee",
+        "tts_id": "tts_108ce8d43ff840fd81ee0f169efc4386"
+      },
+      {
+        "word": "view.",
+        "start": 10.96,
+        "end": 11.3,
+        "confidence": 0.073,
+        "score": 40,
+        "issue": "v_w",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_ca8e86b5ebaa47469c2a57ffa7d15280",
+        "tts_id": "tts_2ae46f84a60c495aad883dc478443a69"
+      },
+      {
+        "word": "Master's.",
+        "start": 12.08,
+        "end": 12.8,
+        "confidence": 0.645,
+        "score": 88,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "e70e7432464c45be9484aa62c63e0a32_77e47cb57cad4396835e86c72b7c6f92"
+      }
+    ],
+    "summary": {
+      "overall_score": 81.1,
+      "top_issues": [
+        {
+          "label": "stress",
+          "count": 8
+        },
+        {
+          "label": "vowel_length",
+          "count": 2
+        },
+        {
+          "label": "th_sound",
+          "count": 2
+        }
+      ],
+      "practice": [
+        "political",
+        "science.",
+        "political"
+      ]
+    },
+    "text": "I had political science. I did my master's in political science for and policy, comparative policy, politics, invest in political thinkers. That was my subjective view. Master's."
+  }
+}

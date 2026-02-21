@@ -1,0 +1,137 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:29:09.039964Z",
+  "job_id": "748eee7d649d48a885cc708a55f3b663",
+  "completed_at": "2025-12-19T23:29:15.185745Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Iwanismai",
+        "start": 0.0,
+        "end": 1.2,
+        "confidence": 0.406,
+        "score": 62,
+        "issue": "vowel_length",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_902df661d9cf4b68b2df5ad4412e7156",
+        "tts_id": "tts_6d73721c1f224b80a3d90b4a277a2e1e"
+      },
+      {
+        "word": "grans\u0103,",
+        "start": 1.2,
+        "end": 1.82,
+        "confidence": 0.638,
+        "score": 88,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_b659a068de5b4483ad67a9f66a98e1a0"
+      },
+      {
+        "word": "ii",
+        "start": 2.24,
+        "end": 2.52,
+        "confidence": 0.567,
+        "score": 87,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_efe9fe0f308d450eb9a692ef2130c0d0"
+      },
+      {
+        "word": "\u00eei",
+        "start": 2.52,
+        "end": 2.7,
+        "confidence": 0.381,
+        "score": 71,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_81cc080452914b3891aaacca5e874ae7",
+        "tts_id": "tts_a0beb7babef645d180f90ca0d40745be"
+      },
+      {
+        "word": "b\u0103rii",
+        "start": 2.7,
+        "end": 3.04,
+        "confidence": 0.366,
+        "score": 71,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_7c678104b60c4eba8116cc4309bd8278",
+        "tts_id": "tts_55005897b391457aada9672f16859892"
+      },
+      {
+        "word": "risor",
+        "start": 3.04,
+        "end": 3.32,
+        "confidence": 0.193,
+        "score": 54,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_fc3b4312b56440c4b616ca6b8580b917",
+        "tts_id": "tts_d61a372dc1eb41f993ed9aa4eb735bfc"
+      },
+      {
+        "word": "spult",
+        "start": 3.32,
+        "end": 3.66,
+        "confidence": 0.499,
+        "score": 73,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_e3fad394745c4d9f8fe681c4c1242bfb",
+        "tts_id": "tts_02458800d20e44668f0bd072ae691477"
+      },
+      {
+        "word": "persoan.",
+        "start": 3.66,
+        "end": 4.8,
+        "confidence": 0.343,
+        "score": 57,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_8ae8a3afdb9a4367bcbf2fb882aefdba",
+        "tts_id": "tts_f132c285076d4e6584a24bfe5089ab61"
+      },
+      {
+        "word": "Ceag\u0103lte\u021bi",
+        "start": 5.16,
+        "end": 5.84,
+        "confidence": 0.459,
+        "score": 63,
+        "issue": "vowel_length",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_6b02d3b48bd848f8bb1b05a0db135ce1",
+        "tts_id": "tts_8a9dc04637d24eb9a23a93722f101815"
+      },
+      {
+        "word": "mele?",
+        "start": 5.84,
+        "end": 5.96,
+        "confidence": 0.493,
+        "score": 73,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "748eee7d649d48a885cc708a55f3b663_84104f4d2321416b8de6194f3d5b8c60",
+        "tts_id": "tts_3e5e7dc9bcb74902ac879aa06a3f2ee8"
+      }
+    ],
+    "summary": {
+      "overall_score": 69.9,
+      "top_issues": [
+        {
+          "label": "low_confidence",
+          "count": 6
+        },
+        {
+          "label": "vowel_length",
+          "count": 2
+        }
+      ],
+      "practice": [
+        "Iwanismai",
+        "\u00eei",
+        "b\u0103rii"
+      ]
+    },
+    "text": "Iwanismai grans\u0103, ii \u00eei b\u0103rii risor spult persoan. Ceag\u0103lte\u021bi mele?"
+  }
+}

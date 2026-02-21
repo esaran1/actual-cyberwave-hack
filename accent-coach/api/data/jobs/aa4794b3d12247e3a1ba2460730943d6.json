@@ -1,0 +1,146 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:30:23.802095Z",
+  "job_id": "aa4794b3d12247e3a1ba2460730943d6",
+  "completed_at": "2025-12-19T23:30:25.089757Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Hey",
+        "start": 1.1000000000000003,
+        "end": 1.86,
+        "confidence": 0.215,
+        "score": 55,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_1ac9f7250b78457186082cc9c6cc8f16",
+        "tts_id": "tts_9f5f4fa358bf4d36866186070f2d8e02"
+      },
+      {
+        "word": "Evan,",
+        "start": 1.86,
+        "end": 2.12,
+        "confidence": 0.609,
+        "score": 88,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_3d50bf058fca4468b5bac9cbe3fc8070"
+      },
+      {
+        "word": "how",
+        "start": 2.4,
+        "end": 2.5,
+        "confidence": 0.909,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_625bd94612f14568af4092db48bd837b"
+      },
+      {
+        "word": "are",
+        "start": 2.5,
+        "end": 2.64,
+        "confidence": 0.941,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_d25a53e9986f464b850431778d6dc1fd"
+      },
+      {
+        "word": "you?",
+        "start": 2.64,
+        "end": 3.02,
+        "confidence": 0.987,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_e701f124c935417ab1d2ff302560d6ee"
+      },
+      {
+        "word": "I'm",
+        "start": 3.84,
+        "end": 4.38,
+        "confidence": 0.958,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_22424f9335904fdfb0e688b1a9327071"
+      },
+      {
+        "word": "doing",
+        "start": 4.38,
+        "end": 4.54,
+        "confidence": 0.998,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_3edb437b087e477e9463ba05ee3612a9"
+      },
+      {
+        "word": "good.",
+        "start": 4.54,
+        "end": 4.9,
+        "confidence": 0.998,
+        "score": 85,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_d11401cd3b3442cd854e30dc6898c3e5",
+        "tts_id": "tts_6894246ca63645aab1050f5cc65dafca"
+      },
+      {
+        "word": "What",
+        "start": 5.82,
+        "end": 6.2,
+        "confidence": 0.971,
+        "score": 83,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_6f004a4bf4ff49f5a6dc02fbfa563830",
+        "tts_id": "tts_e33e708af2d0426a8c022084dd4e6cd8"
+      },
+      {
+        "word": "about",
+        "start": 6.2,
+        "end": 6.44,
+        "confidence": 0.998,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_3bed1af72187478996ab21ccb70bb4cf"
+      },
+      {
+        "word": "you?",
+        "start": 6.44,
+        "end": 6.84,
+        "confidence": 0.996,
+        "score": 95,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "aa4794b3d12247e3a1ba2460730943d6_fd45276a4cc240dabffbdc67cb35b6a7"
+      }
+    ],
+    "summary": {
+      "overall_score": 88.5,
+      "top_issues": [
+        {
+          "label": "low_confidence",
+          "count": 1
+        },
+        {
+          "label": "vowel_length",
+          "count": 1
+        },
+        {
+          "label": "v_w",
+          "count": 1
+        }
+      ],
+      "practice": [
+        "Hey",
+        "good.",
+        "What"
+      ]
+    },
+    "text": "Hey Evan, how are you? I'm doing good. What about you?"
+  }
+}

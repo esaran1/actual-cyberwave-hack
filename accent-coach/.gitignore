@@ -1,0 +1,26 @@
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# runtime data (keep only structure, exclude generated content)
+api/data/clips/
+api/data/tts/
+api/data/uploads/
+api/data/interview/
+api/data/presentations/
+api/data/text/uploads/
+
+# node
+node_modules/
+
+# next
+.next/
+
+# env
+.env
+.env.local
+
+# macOS
+.DS_Store

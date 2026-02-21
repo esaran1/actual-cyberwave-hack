@@ -1,0 +1,23 @@
+# python
+.venv/
+venv/
+
+# node
+node_modules/
+
+# next
+.next/
+
+# env
+.env.local
+
+# macOS
+.DS_Store
+
+# runtime/generated data
+accent-coach/api/data/clips/
+accent-coach/api/data/tts/
+accent-coach/api/data/uploads/
+accent-coach/api/data/interview/
+accent-coach/api/data/presentations/
+accent-coach/api/data/text/uploads/

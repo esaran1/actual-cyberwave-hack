@@ -1,0 +1,90 @@
+{
+  "status": "done",
+  "created_at": "2025-12-19T23:29:44.819553Z",
+  "job_id": "a4cf1fd6674b4d8a97ca39ddddac5110",
+  "completed_at": "2025-12-19T23:29:46.011111Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "M",
+        "start": 0.0,
+        "end": 1.38,
+        "confidence": 0.364,
+        "score": 71,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_e80081a6345548569d388b7b013255ee",
+        "tts_id": "tts_b4e5e8337dcf49e69d1bea1ff5bc2d64"
+      },
+      {
+        "word": "-m",
+        "start": 1.38,
+        "end": 2.28,
+        "confidence": 0.294,
+        "score": 56,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_01dcaedd43a342909fd65b0471a4294b",
+        "tts_id": "tts_8bfd2ae84c334545954bb73d72bd551a"
+      },
+      {
+        "word": "-mera",
+        "start": 2.28,
+        "end": 2.58,
+        "confidence": 0.505,
+        "score": 74,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_565f2b79e8674a3ea6a3c98802683fbe",
+        "tts_id": "tts_bbefc90d40eb415e955fb101e93d1d52"
+      },
+      {
+        "word": "namn,",
+        "start": 2.58,
+        "end": 3.3,
+        "confidence": 0.928,
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_f72521e3453e45cda68e56e979a878ef"
+      },
+      {
+        "word": "bobb,",
+        "start": 3.36,
+        "end": 4.06,
+        "confidence": 0.371,
+        "score": 71,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_82149057940b41d78ad4693f2b11dcf5",
+        "tts_id": "tts_ce8258a2aaa84d9baaf1fd5bf4557edb"
+      },
+      {
+        "word": "heh",
+        "start": 4.32,
+        "end": 4.34,
+        "confidence": 0.416,
+        "score": 72,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "a4cf1fd6674b4d8a97ca39ddddac5110_7ccab41351a44b17a2f9a0bc4f6b03fe",
+        "tts_id": "tts_f16c7a9ffbd542cd907aa5a610ebc04c"
+      }
+    ],
+    "summary": {
+      "overall_score": 73.0,
+      "top_issues": [
+        {
+          "label": "low_confidence",
+          "count": 5
+        }
+      ],
+      "practice": [
+        "M",
+        "-m",
+        "-mera"
+      ]
+    },
+    "text": "M -m -mera namn, bobb, heh"
+  }
+}

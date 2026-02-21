@@ -1,0 +1,466 @@
+{
+  "status": "done",
+  "created_at": "2026-02-21T21:33:07.714093Z",
+  "job_id": "70629375117b4c9fa7a7c929fa53cc2a",
+  "completed_at": "2026-02-21T21:33:19.890793Z",
+  "result": {
+    "transcript": [
+      {
+        "word": "Hi,",
+        "start": 0.0,
+        "end": 0.9,
+        "confidence": 0.72,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "HH",
+          "AY"
+        ],
+        "observed_phonemes": [],
+        "score": 94,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_dcb3a199379d415cb0e1b5a7496c4932"
+      },
+      {
+        "word": "my",
+        "start": 0.98,
+        "end": 1.08,
+        "confidence": 0.989,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "M",
+          "AY"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_5c74fff822bc403baba57c48502c6bf0"
+      },
+      {
+        "word": "name",
+        "start": 1.08,
+        "end": 1.28,
+        "confidence": 0.999,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "N",
+          "EY",
+          "M"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_d36f964094d542449c722f10014a9dc1"
+      },
+      {
+        "word": "is",
+        "start": 1.28,
+        "end": 1.48,
+        "confidence": 0.998,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "IH",
+          "Z"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_00a610d7b7194e04b2864a6f9298e089"
+      },
+      {
+        "word": "Shivam",
+        "start": 1.48,
+        "end": 1.82,
+        "confidence": 0.505,
+        "alignment_score": null,
+        "expected_phonemes": [],
+        "observed_phonemes": [],
+        "score": 90,
+        "issue": "low_confidence",
+        "tip": "Try recording a little closer to the mic and pronounce each word clearly.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_c7512a9a70024e09b4c756eafeaaab14",
+        "tts_id": "tts_5197dd9b88334a0592fdfb2816d5ad91"
+      },
+      {
+        "word": "and",
+        "start": 1.82,
+        "end": 2.08,
+        "confidence": 0.671,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "AH",
+          "N",
+          "D"
+        ],
+        "observed_phonemes": [],
+        "score": 93,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_9d43a396ea3341788c81fa779ebfa34e"
+      },
+      {
+        "word": "I'm",
+        "start": 2.08,
+        "end": 2.34,
+        "confidence": 0.886,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "IH",
+          "M"
+        ],
+        "observed_phonemes": [],
+        "score": 98,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_9093a6691a174aaab954417422b8d25e"
+      },
+      {
+        "word": "a",
+        "start": 2.34,
+        "end": 2.7,
+        "confidence": 0.78,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "AH"
+        ],
+        "observed_phonemes": [],
+        "score": 96,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_08215a2594544ac8a1bed1f960437be6"
+      },
+      {
+        "word": "computer",
+        "start": 2.7,
+        "end": 3.1,
+        "confidence": 0.893,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "K",
+          "AH",
+          "M",
+          "P",
+          "Y",
+          "UW",
+          "T",
+          "ER"
+        ],
+        "observed_phonemes": [],
+        "score": 98,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_37ba5284c3914dadafe4a3f4cef26660",
+        "tts_id": "tts_2858f9b1d0b7475e95c54a7ce37470d1"
+      },
+      {
+        "word": "science",
+        "start": 3.1,
+        "end": 3.54,
+        "confidence": 0.94,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "S",
+          "AY",
+          "AH",
+          "N",
+          "S"
+        ],
+        "observed_phonemes": [],
+        "score": 99,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_80b338b3bfa3427c9155664a89728a44",
+        "tts_id": "tts_39b97d94d1be4b7891fa6ef3f114f450"
+      },
+      {
+        "word": "and",
+        "start": 3.54,
+        "end": 3.86,
+        "confidence": 0.9,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "AH",
+          "N",
+          "D"
+        ],
+        "observed_phonemes": [],
+        "score": 98,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_4daa03f03765472689238b3693d97307"
+      },
+      {
+        "word": "my",
+        "start": 3.86,
+        "end": 4.04,
+        "confidence": 0.99,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "M",
+          "AY"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_1aeaa41b022c4e6682b89c5b49968544"
+      },
+      {
+        "word": "favorite",
+        "start": 4.04,
+        "end": 4.32,
+        "confidence": 0.902,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "F",
+          "EY",
+          "V",
+          "ER",
+          "IH",
+          "T"
+        ],
+        "observed_phonemes": [],
+        "score": 98,
+        "issue": "v_w",
+        "tip": "For /v/ bite your lower lip gently; for /w/ round the lips more and avoid lip contact.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_ea703a6b3453476389041e9572352cad",
+        "tts_id": "tts_03788f2e75b84ecd9949e47fae5feb67"
+      },
+      {
+        "word": "teacher",
+        "start": 4.32,
+        "end": 4.7,
+        "confidence": 0.798,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "T",
+          "IY",
+          "CH",
+          "ER"
+        ],
+        "observed_phonemes": [],
+        "score": 96,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_c76770c5820f4db8a5a5df347e2f3a84",
+        "tts_id": "tts_a76b1a6b52fe4dc2a32fe1cc195bc713"
+      },
+      {
+        "word": "is",
+        "start": 4.7,
+        "end": 4.9,
+        "confidence": 0.915,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "IH",
+          "Z"
+        ],
+        "observed_phonemes": [],
+        "score": 98,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_3eb5c2409e504a32b3c02bd6cc495584"
+      },
+      {
+        "word": "doctor",
+        "start": 4.9,
+        "end": 5.14,
+        "confidence": 0.297,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "D",
+          "AA",
+          "K",
+          "T",
+          "ER"
+        ],
+        "observed_phonemes": [],
+        "score": 86,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_8b5434e773d248a68acf74abba1da32e",
+        "tts_id": "tts_2febd205f500494f9e6577e68797a082"
+      },
+      {
+        "word": "ready.",
+        "start": 5.14,
+        "end": 5.46,
+        "confidence": 0.556,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "R",
+          "EH",
+          "D",
+          "IY"
+        ],
+        "observed_phonemes": [],
+        "score": 91,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_60f5f2fda4354edfafcf72d86c6f3ebf",
+        "tts_id": "tts_1d654cc6102142f08af7633ec9294341"
+      },
+      {
+        "word": "I",
+        "start": 5.82,
+        "end": 6.12,
+        "confidence": 0.96,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "AY"
+        ],
+        "observed_phonemes": [],
+        "score": 99,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_7eff7d9633d84f098a9837180ec58db6"
+      },
+      {
+        "word": "take",
+        "start": 6.12,
+        "end": 6.28,
+        "confidence": 0.824,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "T",
+          "EY",
+          "K"
+        ],
+        "observed_phonemes": [],
+        "score": 96,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_7826a364e9074a8b91fceeaf4cdcd41b"
+      },
+      {
+        "word": "computer",
+        "start": 6.28,
+        "end": 6.66,
+        "confidence": 0.99,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "K",
+          "AH",
+          "M",
+          "P",
+          "Y",
+          "UW",
+          "T",
+          "ER"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_d9eb3c9ce6d747cfa5a566c82524310c",
+        "tts_id": "tts_e24b51329c05415ebd36aa3faeb4937b"
+      },
+      {
+        "word": "science",
+        "start": 6.66,
+        "end": 7.0,
+        "confidence": 0.998,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "S",
+          "AY",
+          "AH",
+          "N",
+          "S"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_e5c8f98bab78428e9f4db3914c6f7217",
+        "tts_id": "tts_f9b892f070054505908217bca1bf1d3b"
+      },
+      {
+        "word": "applications",
+        "start": 7.0,
+        "end": 7.46,
+        "confidence": 0.993,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "AE",
+          "P",
+          "L",
+          "AH",
+          "K",
+          "EY",
+          "SH",
+          "AH",
+          "N",
+          "Z"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "stress",
+        "tip": "Give the stressed syllable extra volume and length to keep the natural English pattern.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_c2c2da4bfdec4475a70c8cec78be7105",
+        "tts_id": "tts_9a53a417c63149858defcc5eb8682327"
+      },
+      {
+        "word": "in",
+        "start": 7.46,
+        "end": 7.96,
+        "confidence": 0.965,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "IH",
+          "N"
+        ],
+        "observed_phonemes": [],
+        "score": 99,
+        "issue": "ok",
+        "tip": "Take a breath, slow down, and match the rhythm of a native speaker.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_c9e9d6700b1c4de5a52a659d6aec0a7d"
+      },
+      {
+        "word": "school.",
+        "start": 7.96,
+        "end": 8.26,
+        "confidence": 0.996,
+        "alignment_score": null,
+        "expected_phonemes": [
+          "S",
+          "K",
+          "UW",
+          "L"
+        ],
+        "observed_phonemes": [],
+        "score": 100,
+        "issue": "vowel_length",
+        "tip": "Stretch long vowels for a full beat; short vowels should be crisp and quick.",
+        "clip_id": "70629375117b4c9fa7a7c929fa53cc2a_33d6d45484f84621a5c4ce8dd426e3e1",
+        "tts_id": "tts_923ea2cd44f246eaa2942002bcadb6b0"
+      }
+    ],
+    "summary": {
+      "overall_score": 97.0,
+      "top_issues": [
+        {
+          "label": "vowel_length",
+          "count": 8
+        },
+        {
+          "label": "low_confidence",
+          "count": 1
+        },
+        {
+          "label": "v_w",
+          "count": 1
+        }
+      ],
+      "practice": [
+        "Shivam",
+        "computer",
+        "science"
+      ]
+    },
+    "text": "Hi, my name is Shivam and I'm a computer science and my favorite teacher is doctor ready. I take computer science applications in school."
+  }
+}

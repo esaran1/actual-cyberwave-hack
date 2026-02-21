@@ -1,0 +1,15 @@
+{
+  "status": "done",
+  "created_at": "2026-02-21T21:32:38.575322Z",
+  "job_id": "c46135b9ac044d10b472dfe1de11aca4",
+  "completed_at": "2026-02-21T21:32:48.080981Z",
+  "result": {
+    "transcript": [],
+    "summary": {
+      "overall_score": 0,
+      "top_issues": [],
+      "practice": []
+    },
+    "text": ""
+  }
+}
