@@ -259,3 +259,78 @@ export async function fetchInterviewJob(
 export function getInterviewAudioUrl(jobId: string, index: number): string {
   return `${API_BASE}/api/interview/job/${jobId}/audio/${index}`;
 }
+
+// Customer Care (frontline worker scenarios)
+export interface CustomerCareScenario {
+  context?: string;
+  customer_lines: string[];
+}
+
+export interface CustomerCareResult {
+  summary: string;
+  score: number;
+  improvements: string[];
+}
+
+export interface CustomerCareJobResponse {
+  job_id: string;
+  status: "in_progress" | "done" | "error";
+  error?: string;
+  category?: string;
+  scenarios?: CustomerCareScenario[];
+  replies?: { transcript: string; audio_id: string }[];
+  result?: CustomerCareResult;
+}
+
+export async function startCustomerCare(
+  category: string
+): Promise<{ job_id: string; scenarios: CustomerCareScenario[] }> {
+  const formData = new FormData();
+  formData.append("category", category);
+  return await request<{ job_id: string; scenarios: CustomerCareScenario[] }>(
+    "/api/customer-care/start",
+    { method: "POST", body: formData }
+  );
+}
+
+export async function submitCustomerCareReply(
+  jobId: string,
+  replyIndex: number,
+  audioBlob: Blob,
+  filename = "reply.webm"
+): Promise<{ transcript: string }> {
+  const formData = new FormData();
+  formData.append("reply_index", String(replyIndex));
+  formData.append("audio_file", audioBlob, filename);
+  return await request<{ transcript: string }>(
+    `/api/customer-care/job/${jobId}/reply`,
+    { method: "POST", body: formData }
+  );
+}
+
+export async function completeCustomerCare(
+  jobId: string
+): Promise<{ result: CustomerCareResult }> {
+  return await request<{ result: CustomerCareResult }>(
+    `/api/customer-care/job/${jobId}/complete`,
+    { method: "POST" }
+  );
+}
+
+export async function fetchCustomerCareJob(
+  jobId: string
+): Promise<CustomerCareJobResponse> {
+  return await request<CustomerCareJobResponse>(
+    `/api/customer-care/job/${jobId}`
+  );
+}
+
+export function getCustomerCareAudioUrl(jobId: string, index: number): string {
+  return `${API_BASE}/api/customer-care/job/${jobId}/audio/${index}`;
+}
+
+export async function fetchCustomerCareCategories(): Promise<{ categories: string[] }> {
+  return await request<{ categories: string[] }>(
+    "/api/customer-care/categories"
+  );
+}

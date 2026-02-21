@@ -25,6 +25,8 @@ from speech.coach import (
     get_answers_for_questions,
     get_answers_for_text,
     get_audience_questions,
+    get_customer_care_feedback,
+    get_customer_care_scenarios,
     get_gemini_tips,
     get_interview_analysis,
     get_interview_questions,
@@ -42,8 +44,9 @@ SAMPLES_DIR = DATA_DIR / "samples"
 PRESENTATION_DIR = DATA_DIR / "presentations"
 TEXT_DIR = DATA_DIR / "text"
 INTERVIEW_DIR = DATA_DIR / "interview"
+CUSTOMER_CARE_DIR = DATA_DIR / "customer_care"
 
-for path in [UPLOADS_DIR, JOBS_DIR, CLIPS_DIR, TTS_DIR, SAMPLES_DIR, PRESENTATION_DIR, TEXT_DIR, INTERVIEW_DIR]:
+for path in [UPLOADS_DIR, JOBS_DIR, CLIPS_DIR, TTS_DIR, SAMPLES_DIR, PRESENTATION_DIR, TEXT_DIR, INTERVIEW_DIR, CUSTOMER_CARE_DIR]:
     path.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="AccentCoach API", version="0.1.0")
@@ -378,6 +381,124 @@ async def complete_interview(job_id: str, background_tasks: BackgroundTasks):
 @app.get("/api/interview/job/{job_id}")
 def get_interview_job(job_id: str):
     return _read_job(job_id)
+
+
+@app.post("/api/customer-care/start")
+async def start_customer_care(category: str = Form(...)):
+    """Create a customer care practice job. Category must be one of the 7 frontline categories."""
+    categories = [
+        "Healthcare", "Construction", "Retail", "Food Service",
+        "Hospitality", "Transportation", "Banking & Finance",
+    ]
+    if category not in categories:
+        raise HTTPException(status_code=400, detail=f"Invalid category. Choose from: {', '.join(categories)}")
+
+    scenarios = get_customer_care_scenarios(category)
+    if not scenarios:
+        raise HTTPException(status_code=400, detail="No scenarios for this category.")
+
+    job_id = f"customercare_{uuid.uuid4().hex}"
+    job_record = {
+        "status": "in_progress",
+        "type": "customer_care",
+        "created_at": datetime.utcnow().isoformat() + "Z",
+        "category": category,
+        "scenarios": scenarios,
+        "replies": [],
+    }
+    _write_job(job_id, job_record)
+    (CUSTOMER_CARE_DIR / job_id).mkdir(parents=True, exist_ok=True)
+    return {"job_id": job_id, "scenarios": scenarios}
+
+
+@app.post("/api/customer-care/job/{job_id}/reply")
+async def submit_customer_care_reply(
+    job_id: str,
+    reply_index: int = Form(...),
+    audio_file: UploadFile = File(...),
+):
+    """Submit audio reply for an exchange. reply_index is linear: 0-8 for 3 scenarios x 3 exchanges."""
+    job = _read_job(job_id)
+    if job.get("status") != "in_progress":
+        raise HTTPException(status_code=400, detail="Session not in progress")
+    scenarios = job.get("scenarios", [])
+    total_exchanges = sum(len(s.get("customer_lines", [""])) for s in scenarios)
+    if reply_index < 0 or reply_index >= total_exchanges:
+        raise HTTPException(status_code=400, detail="Invalid reply index")
+
+    content = await audio_file.read()
+    job_dir = CUSTOMER_CARE_DIR / job_id
+    job_dir.mkdir(parents=True, exist_ok=True)
+    ext = Path(audio_file.filename or "audio").suffix.lower() or ".webm"
+    audio_path = job_dir / f"reply_{reply_index}{ext}"
+    with audio_path.open("wb") as fp:
+        fp.write(content)
+
+    wav_path = job_dir / f"reply_{reply_index}.wav"
+    try:
+        audio.convert_to_wav(audio_path, wav_path)
+        t = transcribe(wav_path)
+        transcript_text = t.get("text", "").strip()
+    except Exception:
+        transcript_text = ""
+
+    replies = job.get("replies", [])
+    while len(replies) <= reply_index:
+        replies.append({"transcript": "", "audio_id": ""})
+    replies[reply_index] = {
+        "transcript": transcript_text,
+        "audio_id": f"{job_id}_reply_{reply_index}",
+    }
+    job["replies"] = replies
+    _write_job(job_id, job)
+    return {"reply_index": reply_index, "transcript": transcript_text}
+
+
+@app.post("/api/customer-care/job/{job_id}/complete")
+async def complete_customer_care(job_id: str):
+    """Mark session complete and generate feedback."""
+    job = _read_job(job_id)
+    if job.get("status") != "in_progress":
+        raise HTTPException(status_code=400, detail="Session not in progress")
+
+    replies = job.get("replies", [])
+    transcripts = [r.get("transcript", "") for r in replies if isinstance(r, dict)]
+    category = job.get("category", "")
+
+    result = get_customer_care_feedback(category, transcripts)
+    job.update(
+        {
+            "status": "done",
+            "completed_at": datetime.utcnow().isoformat() + "Z",
+            "result": result,
+        }
+    )
+    _write_job(job_id, job)
+    return {"job_id": job_id, "status": "done", "result": result}
+
+
+@app.get("/api/customer-care/job/{job_id}")
+def get_customer_care_job(job_id: str):
+    return _read_job(job_id)
+
+
+@app.get("/api/customer-care/job/{job_id}/audio/{index}")
+def get_customer_care_audio(job_id: str, index: int):
+    """Serve recorded reply audio for playback."""
+    job_dir = CUSTOMER_CARE_DIR / job_id
+    wav_path = job_dir / f"reply_{index}.wav"
+    if not wav_path.exists():
+        raise HTTPException(status_code=404, detail="Audio not found")
+    return FileResponse(wav_path, media_type="audio/wav")
+
+
+@app.get("/api/customer-care/categories")
+def get_customer_care_categories():
+    """Return the list of available frontline categories."""
+    return {"categories": [
+        "Healthcare", "Construction", "Retail", "Food Service",
+        "Hospitality", "Transportation", "Banking & Finance",
+    ]}
 
 
 @app.get("/api/interview/job/{job_id}/audio/{index}")
