@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import { AppShell } from "@/components/AppShell";
 
 export const metadata: Metadata = {
-  title: "AccentCoach",
-  description: "Gentle pronunciation coaching powered by speech AI",
+  title: "FrontlineReady",
+  description: "Build workplace communication skills—pronunciation, customer care, and interview practice for frontline roles",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

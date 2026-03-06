@@ -76,8 +76,7 @@ export default function TextPage() {
           <div>
             <h1 className="text-3xl font-semibold text-slate-900">Script & feedback from text</h1>
             <p className="text-sm text-slate-500">
-              No video needed. Paste your text or upload a document to get a presentation script,
-              coaching feedback, and audience questions.
+              Turn your notes, reports, or documents into a presentation script, delivery feedback, and practice questions—no recording required.
             </p>
           </div>
           <Button asChild variant="ghost">

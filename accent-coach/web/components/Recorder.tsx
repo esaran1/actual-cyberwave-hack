@@ -21,7 +21,7 @@ type RecorderState = "idle" | "recording" | "preview" | "submitting";
 export function Recorder({
   onSubmit,
   disabled,
-  submitLabel = "Analyze take",
+  submitLabel = "Get feedback",
   showUploadFallback = true,
   maxDurationSeconds,
 }: RecorderProps) {
@@ -44,7 +44,6 @@ export function Recorder({
         waveColor: "#bfd3ff",
         progressColor: "#2563eb",
         height: 120,
-        responsive: true,
         cursorColor: "transparent",
       });
     }

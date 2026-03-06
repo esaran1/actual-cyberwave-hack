@@ -17,6 +17,25 @@ export interface WordResult {
   tts_id?: string;
 }
 
+export interface PacingResult {
+  words_per_minute: number;
+  label: string;
+  pauses?: { start: number; end: number; duration: number }[];
+  long_pauses_count?: number;
+  pause_ratio?: number;
+  feedback?: string[];
+}
+
+export interface ConfidenceResult {
+  confidence_score: number;
+  filler_count: number;
+  filler_rate: number;
+  filler_words?: { word: string; count: number }[];
+  pacing_label?: string;
+  words_per_minute?: number;
+  feedback?: string[];
+}
+
 export interface JobResponse {
   job_id: string;
   status: "processing" | "done" | "error";
@@ -25,6 +44,8 @@ export interface JobResponse {
     transcript: WordResult[];
     summary: Summary;
     text: string;
+    pacing?: PacingResult;
+    confidence?: ConfidenceResult;
   };
 }
 
@@ -74,7 +95,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     const message =
       error instanceof Error ? error.message : "Network error";
     throw new Error(
-      `Failed to reach AccentCoach API at ${API_BASE}. Is the backend running on port 8000? (${message})`
+      `Failed to reach FrontlineReady API at ${API_BASE}. Is the backend running on port 8000? (${message})`
     );
   }
   if (!response.ok) {
@@ -270,6 +291,12 @@ export interface CustomerCareResult {
   summary: string;
   score: number;
   improvements: string[];
+  speech_confidence?: {
+    confidence_score: number;
+    filler_count: number;
+    filler_rate: number;
+    feedback?: string[];
+  };
 }
 
 export interface CustomerCareJobResponse {
@@ -283,10 +310,12 @@ export interface CustomerCareJobResponse {
 }
 
 export async function startCustomerCare(
-  category: string
+  category: string,
+  level?: string
 ): Promise<{ job_id: string; scenarios: CustomerCareScenario[] }> {
   const formData = new FormData();
   formData.append("category", category);
+  if (level) formData.append("level", level);
   return await request<{ job_id: string; scenarios: CustomerCareScenario[] }>(
     "/api/customer-care/start",
     { method: "POST", body: formData }
@@ -333,4 +362,91 @@ export async function fetchCustomerCareCategories(): Promise<{ categories: strin
   return await request<{ categories: string[] }>(
     "/api/customer-care/categories"
   );
+}
+
+// Analytics & Gamification
+export interface AnalyticsStats {
+  sessions_completed: number;
+  pronunciation_scores: number[];
+  interview_scores: number[];
+  customer_care_scores: number[];
+  modules_used: string[];
+  pronunciation_80_count: number;
+  pronunciation_90_count: number;
+  interview_70_count: number;
+  customer_care_70_count: number;
+  current_streak: number;
+  badges: { id: string; name: string; description: string }[];
+  suggested_drill: string;
+  total_xp?: number;
+}
+
+export async function fetchAnalytics(): Promise<AnalyticsStats> {
+  return await request<AnalyticsStats>("/api/analytics");
+}
+
+// Industry Packs
+export interface IndustryPack {
+  industry: string;
+  scenario_count: number;
+  levels: string[];
+  description: string;
+}
+
+export async function fetchIndustryPacks(): Promise<{ packs: IndustryPack[] }> {
+  return await request<{ packs: IndustryPack[] }>("/api/industry-packs");
+}
+
+// Roleplay
+export interface RoleplayScenario {
+  context: string;
+  customer_lines: string[];
+  level: string;
+  job_role?: string;
+  scenario_type?: string;
+  tips?: string[];
+}
+
+export async function startRoleplay(
+  jobRole: string,
+  scenarioType: string,
+  difficulty: string
+): Promise<{ job_id: string; scenario: RoleplayScenario }> {
+  const formData = new FormData();
+  formData.append("job_role", jobRole);
+  formData.append("scenario_type", scenarioType);
+  formData.append("difficulty", difficulty);
+  return await request<{ job_id: string; scenario: RoleplayScenario }>(
+    "/api/roleplay/start",
+    { method: "POST", body: formData }
+  );
+}
+
+export async function submitRoleplayReply(
+  jobId: string,
+  replyIndex: number,
+  audioBlob: Blob,
+  filename = "reply.webm"
+): Promise<{ transcript: string }> {
+  const formData = new FormData();
+  formData.append("reply_index", String(replyIndex));
+  formData.append("audio_file", audioBlob, filename);
+  return await request<{ transcript: string }>(
+    `/api/roleplay/job/${jobId}/reply`,
+    { method: "POST", body: formData }
+  );
+}
+
+export async function completeRoleplay(
+  jobId: string
+): Promise<{ result: { summary: string; score: number; improvements: string[] } }> {
+  return await request<{ result: { summary: string; score: number; improvements: string[] } }>(
+    `/api/roleplay/job/${jobId}/complete`,
+    { method: "POST" }
+  );
+}
+
+// Job SSE for real-time feedback
+export function getJobStreamUrl(jobId: string): string {
+  return `${API_BASE}/api/job/${jobId}/stream`;
 }

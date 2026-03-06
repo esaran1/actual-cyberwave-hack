@@ -34,9 +34,9 @@ export default function RecordPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Record</p>
         <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-3xl font-semibold text-slate-900">Record a short phrase</h1>
+            <h1 className="text-3xl font-semibold text-slate-900">Record your speech</h1>
             <p className="text-sm text-slate-500">
-              Speak naturally for 10–20 seconds. AccentCoach will handle conversion, transcription, and scoring.
+              Speak naturally for 10–20 seconds. Get clarity scores and pronunciation feedback to improve workplace communication.
             </p>
           </div>
           <Button asChild variant="ghost">
@@ -49,7 +49,7 @@ export default function RecordPage() {
       <Card>
         <CardTitle>Tip</CardTitle>
         <CardDescription className="mt-2 text-sm text-slate-600">
-          Accents aren&apos;t wrong. This session simply highlights patterns that might reduce clarity for new listeners.
+          We focus on clarity—not changing who you are. These insights help you communicate confidently with customers, colleagues, and interviewers.
         </CardDescription>
       </Card>
     </div>

@@ -84,7 +84,7 @@ export default function PresentationPage() {
           <div>
             <h1 className="text-3xl font-semibold text-slate-900">Presentation coaching</h1>
             <p className="text-sm text-slate-500">
-              Upload your slide deck and a recording of your talk to get pacing, posture, and gesture insights.
+              Upload your slides and a recording of your talk. Get pacing feedback, delivery tips, and simulated audience questions—so you&apos;re ready for meetings, trainings, or interviews.
             </p>
           </div>
           <Button asChild variant="ghost">

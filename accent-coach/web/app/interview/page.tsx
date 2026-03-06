@@ -153,10 +153,9 @@ export default function InterviewPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Interview</p>
         <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-3xl font-semibold text-slate-900">Mock interview coach</h1>
+            <h1 className="text-3xl font-semibold text-slate-900">Interview practice</h1>
             <p className="text-sm text-slate-500">
-              Practice for frontline roles (construction, healthcare, retail). Get questions, answer
-              verbally, and receive a scored summary with delivery tips.
+              Practice for frontline roles in healthcare, retail, construction, and more. Answer tailored questions, get scored feedback, and build confidence for your next interview.
             </p>
           </div>
           <Button asChild variant="ghost">
@@ -182,7 +181,7 @@ export default function InterviewPage() {
         >
           <Card className="space-y-4">
             <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-5 w-5" /> Job details
+              <Building2 className="h-5 w-5" /> Target role
             </CardTitle>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -255,7 +254,7 @@ export default function InterviewPage() {
           </Card>
 
           <Button size="lg" onClick={handleStart} disabled={isStarting}>
-            {isStarting ? "Generating questions…" : "Start mock interview"}
+            {isStarting ? "Generating questions…" : "Start interview practice"}
           </Button>
         </motion.div>
       )}
@@ -314,7 +313,7 @@ export default function InterviewPage() {
             <Card className="border-emerald-100 bg-emerald-50/50">
               <CardTitle>All questions answered</CardTitle>
               <CardDescription className="mt-1">
-                Complete the interview to get your score, summary, and improvement tips.
+                Complete the interview to get your score, summary, and tips to strengthen your next performance.
               </CardDescription>
               <Button
                 size="lg"
@@ -323,7 +322,7 @@ export default function InterviewPage() {
                 disabled={isCompleting}
               >
                 <Sparkles className="h-4 w-4" />
-                {isCompleting ? "Analyzing…" : "Complete interview & get feedback"}
+                {isCompleting ? "Analyzing…" : "Complete & get feedback"}
               </Button>
             </Card>
           )}
@@ -378,7 +377,7 @@ export default function InterviewPage() {
           <Card>
             <CardTitle>Improvements</CardTitle>
             <CardDescription className="mt-1">
-              Focus on delivery and clarity to strengthen your next interview.
+              Use these tips to strengthen your next interview and stand out as a candidate.
             </CardDescription>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               {(job.result.improvements ?? []).map((tip, i) => (
@@ -424,7 +423,7 @@ export default function InterviewPage() {
               setCurrentQuestionIndex(0);
             }}
           >
-            Start a new interview
+            Practice again
           </Button>
         </motion.div>
       )}

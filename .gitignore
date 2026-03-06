@@ -15,6 +15,7 @@ node_modules/
 .DS_Store
 
 # runtime/generated data
+accent-coach/api/data/jobs/
 accent-coach/api/data/clips/
 accent-coach/api/data/tts/
 accent-coach/api/data/uploads/

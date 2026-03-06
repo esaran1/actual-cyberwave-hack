@@ -25,7 +25,7 @@ export function PracticeDrill({ words }: PracticeDrillProps) {
       <Card>
         <CardTitle>Practice drill</CardTitle>
         <CardDescription className="mt-2">
-          No flagged words yet. Great clarity so far—try another take to unlock drills.
+          No words need extra practice yet. Record another take to unlock targeted drills.
         </CardDescription>
       </Card>
     );
@@ -51,7 +51,7 @@ export function PracticeDrill({ words }: PracticeDrillProps) {
           <CardTitle className="flex items-center gap-2">
             Practice drill <Sparkles className="h-4 w-4 text-brand" />
           </CardTitle>
-          <CardDescription className="mt-2">Repeat tricky words with a quick streak tracker.</CardDescription>
+          <CardDescription className="mt-2">Repeat challenging words and track your streak.</CardDescription>
         </div>
         <Badge variant="secondary">Streak {streak}</Badge>
       </div>
@@ -84,7 +84,7 @@ export function PracticeDrill({ words }: PracticeDrillProps) {
         />
         <AudioWavePlayer
           src={current.tts_id ? `${API_BASE}/api/tts/${current.tts_id}` : undefined}
-          label="AccentCoach example"
+          label="Example pronunciation"
           emptyText="Open a word panel to generate an example clip."
         />
 

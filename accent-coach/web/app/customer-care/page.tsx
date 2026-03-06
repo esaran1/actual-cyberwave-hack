@@ -34,6 +34,14 @@ const CATEGORIES = [
   "Hospitality",
   "Transportation",
   "Banking & Finance",
+  "Call Center",
+];
+
+const LEVELS = [
+  { id: "", label: "All levels" },
+  { id: "beginner", label: "Beginner" },
+  { id: "intermediate", label: "Intermediate" },
+  { id: "advanced", label: "Advanced" },
 ];
 
 type Step = "category" | "scenarios" | "feedback";
@@ -49,6 +57,7 @@ function getReplyIndex(scenarioIndex: number, exchangeIndex: number, scenarios: 
 export default function CustomerCarePage() {
   const [step, setStep] = useState<Step>("category");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<string>("");
   const [job, setJob] = useState<CustomerCareJobResponse | null>(null);
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
   const [currentExchangeIndex, setCurrentExchangeIndex] = useState(0);
@@ -73,7 +82,10 @@ export default function CustomerCarePage() {
     setIsStarting(true);
     setError(null);
     try {
-      const { job_id, scenarios: sc } = await startCustomerCare(selectedCategory);
+      const { job_id, scenarios: sc } = await startCustomerCare(
+        selectedCategory,
+        selectedLevel || undefined
+      );
       setJob({
         job_id,
         status: "in_progress",
@@ -171,11 +183,10 @@ export default function CustomerCarePage() {
         <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-3xl font-semibold text-slate-900">
-              Frontline worker practice
+              Customer care practice
             </h1>
             <p className="text-sm text-slate-500">
-              Choose your industry, face 3 simulated customers, and have a real
-              back-and-forth conversation. The AI plays the customer—you respond.
+              Choose your industry, face 3 simulated customers in realistic scenarios, and practice de-escalating, explaining policies, and fulfilling needs. Build the skills that keep customers—and employers—happy.
             </p>
           </div>
           <Button asChild variant="ghost">
@@ -201,12 +212,28 @@ export default function CustomerCarePage() {
         >
           <Card>
             <CardTitle className="flex items-center gap-2">
-              <Headphones className="h-5 w-5" /> Select your role
+              <Headphones className="h-5 w-5" /> Select your industry
             </CardTitle>
             <CardDescription className="mt-1">
-              Pick the frontline category that matches your job. You&apos;ll have
-              interactive conversations with 3 different customers.
+              Pick the category that matches your frontline role. You&apos;ll have interactive conversations with 3 different simulated customers.
             </CardDescription>
+            <div className="mt-4">
+              <label className="text-sm font-medium text-slate-700">Level (optional)</label>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {LEVELS.map((l) => (
+                  <button
+                    key={l.id || "all"}
+                    type="button"
+                    onClick={() => setSelectedLevel(l.id)}
+                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                      selectedLevel === l.id ? "bg-brand text-white" : "border border-slate-200 hover:border-slate-300"
+                    }`}
+                  >
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {CATEGORIES.map((cat) => (
                 <button
@@ -374,7 +401,7 @@ export default function CustomerCarePage() {
             <Card className="border-emerald-100 bg-emerald-50/50">
               <CardTitle>All conversations complete</CardTitle>
               <CardDescription className="mt-1">
-                Get feedback on how well you fulfilled each customer&apos;s needs.
+                Get feedback on your customer care skills—empathy, clarity, and ability to meet needs.
               </CardDescription>
               <Button size="lg" className="mt-4 gap-2" onClick={handleComplete}>
                 <Sparkles className="h-4 w-4" />
@@ -421,10 +448,31 @@ export default function CustomerCarePage() {
             <p className="mt-4 text-slate-700">{job.result.summary}</p>
           </Card>
 
+          {job.result.speech_confidence && (
+            <Card>
+              <CardTitle>Speech & confidence</CardTitle>
+              <p className="mt-2 text-slate-700">
+                Confidence score: {job.result.speech_confidence.confidence_score}/100
+                {job.result.speech_confidence.filler_count > 0 && (
+                  <span className="ml-2 text-amber-600">
+                    · {job.result.speech_confidence.filler_count} filler word{job.result.speech_confidence.filler_count !== 1 ? "s" : ""} detected
+                  </span>
+                )}
+              </p>
+              {job.result.speech_confidence.feedback?.length ? (
+                <ul className="mt-3 space-y-1 text-sm text-slate-600">
+                  {job.result.speech_confidence.feedback.map((fb, i) => (
+                    <li key={i}>• {fb}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </Card>
+          )}
+
           <Card>
             <CardTitle>Tips to improve</CardTitle>
             <CardDescription className="mt-1">
-              Apply these when handling real customers.
+              Apply these in real customer interactions to build trust and resolve issues.
             </CardDescription>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               {(job.result.improvements ?? []).map((tip, i) => (
@@ -436,18 +484,23 @@ export default function CustomerCarePage() {
             </ul>
           </Card>
 
-          <Button
-            variant="outline"
-            onClick={() => {
-              setStep("category");
-              setJob(null);
-              setSelectedCategory(null);
-              setCurrentScenarioIndex(0);
-              setCurrentExchangeIndex(0);
-            }}
-          >
-            Practice again
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button
+              variant="outline"
+              onClick={() => {
+                setStep("category");
+                setJob(null);
+                setSelectedCategory(null);
+                setCurrentScenarioIndex(0);
+                setCurrentExchangeIndex(0);
+              }}
+            >
+              Practice again
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/dashboard">View dashboard</Link>
+            </Button>
+          </div>
         </motion.div>
       )}
     </div>

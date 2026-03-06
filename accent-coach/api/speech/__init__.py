@@ -1,1 +1,1 @@
-"""Speech processing helpers for AccentCoach."""
+"""Speech processing helpers for FrontlineReady."""

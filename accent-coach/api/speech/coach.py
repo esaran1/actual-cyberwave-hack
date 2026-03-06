@@ -459,12 +459,213 @@ CUSTOMER_CARE_SCENARIOS: dict[str, list[dict]] = {
 }
 
 
-def get_customer_care_scenarios(category: str) -> list[dict]:
-    """Return the 3 scenarios for a given category."""
-    scenarios = CUSTOMER_CARE_SCENARIOS.get(category)
+# Industry pack metadata: beginner → advanced
+INDUSTRY_LEVELS: dict[str, dict] = {
+    "Healthcare": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Construction": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Retail": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Food Service": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Hospitality": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Transportation": {"beginner": 0, "intermediate": 1, "advanced": 2},
+    "Banking & Finance": {"beginner": 0, "intermediate": 1, "advanced": 2},
+}
+
+# Call center scenarios (additional industry pack)
+CALL_CENTER_SCENARIOS: list[dict] = [
+    {
+        "context": "A caller is upset about a delayed shipment. The tracking shows it's in transit. You cannot expedite—you must explain status and offer to escalate or provide a case number.",
+        "customer_lines": [
+            "I ordered this a week ago and it still hasn't arrived! I need it for a gift. Where is it?",
+            "In transit? What does that even mean? Can you guarantee it gets here by Friday?",
+            "This is unacceptable. I want to speak to a supervisor. And I want a refund if it doesn't come.",
+        ],
+        "level": "beginner",
+        "tips": ["Acknowledge frustration first.", "Offer a concrete next step (case number, escalation)."],
+    },
+    {
+        "context": "A caller's account was locked due to suspicious activity. They must verify identity via security questions. You cannot unlock without verification.",
+        "customer_lines": [
+            "Why is my account locked? I didn't do anything wrong! I need access now—I have bills to pay!",
+            "Security questions? I don't remember the answers! Can't you just send me a code to my phone?",
+            "I've been a customer for 10 years! This is ridiculous. Get me someone who can fix this.",
+        ],
+        "level": "intermediate",
+        "tips": ["Explain why verification protects them.", "Offer alternative verification paths if available."],
+    },
+    {
+        "context": "A caller was charged for a subscription they claim to have cancelled. Your system shows the cancel request came after the billing cycle. Refunds require supervisor approval.",
+        "customer_lines": [
+            "I cancelled last month! Why am I still being charged? I want my money back.",
+            "Your system is wrong! I cancelled before the 15th. I have the confirmation email somewhere.",
+            "I'm disputing this with my bank. And I'm never using your service again. Unbelievable.",
+        ],
+        "level": "advanced",
+        "tips": ["Stay calm and empathetic.", "Document and escalate—don't promise refunds without approval."],
+    },
+]
+
+
+def get_customer_care_scenarios(category: str, level: str | None = None) -> list[dict]:
+    """Return the 3 scenarios for a given category. Optional level: beginner, intermediate, advanced."""
+    cat_key = "Call Center" if category.lower().replace(" ", "") == "callcenter" else category
+    scenarios = CUSTOMER_CARE_SCENARIOS.get(cat_key)
     if not scenarios:
+        if cat_key == "Call Center":
+            return CALL_CENTER_SCENARIOS[:3]
         return []
-    return scenarios[:3]
+    out = []
+    for s in scenarios[:3]:
+        sc = dict(s)
+        idx = scenarios.index(s)
+        if idx == 0:
+            sc["level"] = "beginner"
+            sc["tips"] = ["Listen first.", "Apologize for the inconvenience.", "State what you can do."]
+        elif idx == 1:
+            sc["level"] = "intermediate"
+            sc["tips"] = ["Acknowledge feelings.", "Explain limits clearly.", "Offer alternatives."]
+        else:
+            sc["level"] = "advanced"
+            sc["tips"] = ["De-escalate tone.", "Be specific about next steps.", "Escalate when needed."]
+        if level and sc.get("level") != level:
+            continue
+        out.append(sc)
+    return out[:3] if not level else out
+
+
+def get_industry_packs() -> list[dict]:
+    """Return industry-specific scenario packs with levels and tips."""
+    packs = []
+    for cat in CUSTOMER_CARE_CATEGORIES:
+        scenarios = get_customer_care_scenarios(cat)
+        packs.append({
+            "industry": cat,
+            "scenario_count": len(scenarios),
+            "levels": ["beginner", "intermediate", "advanced"],
+            "description": f"Practice {cat} customer interactions—policy explanations, de-escalation, and problem-solving.",
+        })
+    packs.append({
+        "industry": "Call Center",
+        "scenario_count": 3,
+        "levels": ["beginner", "intermediate", "advanced"],
+        "description": "Handle phone support—delays, account issues, billing disputes.",
+    })
+    return packs
+
+
+def generate_roleplay_scenario(
+    job_role: str,
+    scenario_type: str,
+    difficulty: str,
+) -> dict:
+    """Generate a dynamic roleplay scenario. Local, no API."""
+    role_lower = (job_role or "frontline worker").lower()
+    scenario_lower = (scenario_type or "customer_complaint").lower()
+    diff = (difficulty or "intermediate").lower()
+    if diff not in ("beginner", "intermediate", "advanced"):
+        diff = "intermediate"
+
+    # Map scenario types to templates
+    templates = {
+        "customer_complaint": {
+            "context": f"As a {job_role}, a customer is upset about a service issue. You must listen, acknowledge, and offer a solution within policy.",
+            "customer_lines": [
+                "I've been waiting forever and nobody is helping me. This is terrible service.",
+                "That's not good enough. I want to speak to a manager. Now.",
+                "I'm never coming back. And I'm telling everyone I know.",
+            ],
+        },
+        "policy_explanation": {
+            "context": f"As a {job_role}, you must explain a company policy (e.g., return window, refund rules) to a customer who doesn't understand.",
+            "customer_lines": [
+                "Why can't I return this? I just bought it last week.",
+                "That doesn't make sense. Other stores do it differently.",
+                "Fine. But I'm not happy about it.",
+            ],
+        },
+        "urgent_request": {
+            "context": f"As a {job_role}, a customer has an urgent request you cannot fulfill immediately. You must set expectations and offer alternatives.",
+            "customer_lines": [
+                "I need this done today. It's an emergency.",
+                "Can't you make an exception? Just this once?",
+                "This is unacceptable. I need to speak to someone who can help.",
+            ],
+        },
+    }
+    t = templates.get(scenario_lower, templates["customer_complaint"])
+    lines = t["customer_lines"]
+    if diff == "beginner":
+        lines = lines[:2]
+    elif diff == "advanced":
+        lines = lines  # all 3
+    else:
+        lines = lines[:2]
+
+    return {
+        "context": t["context"],
+        "customer_lines": lines,
+        "level": diff,
+        "job_role": job_role,
+        "scenario_type": scenario_type,
+        "tips": [
+            "Listen before responding.",
+            "Acknowledge the customer's feelings.",
+            "State what you can do clearly.",
+        ],
+    }
+
+
+def parse_resume_for_interview(content: str) -> dict:
+    """Extract qualifications, skills, experience from resume text. Local parsing."""
+    text = (content or "").strip()[:8000]
+    if not text:
+        return {"skills": [], "experience": [], "summary": ""}
+
+    skills = []
+    experience = []
+
+    # Simple keyword extraction
+    skill_keywords = [
+        "customer service", "communication", "teamwork", "problem solving",
+        "leadership", "cash handling", "inventory", "safety", "bilingual",
+        "computer", "POS", "retail", "hospitality", "healthcare", "food service",
+    ]
+    text_lower = text.lower()
+    for kw in skill_keywords:
+        if kw in text_lower:
+            skills.append(kw.title())
+
+    # Extract lines that look like experience
+    for line in text.split("\n"):
+        line = line.strip()
+        if not line or len(line) < 15:
+            continue
+        if any(word in line.lower() for word in ["experience", "worked", "job", "position", "responsibilit"]):
+            continue
+        if re.search(r"\d{4}\s*[-–]\s*\d{4}|present|current", line, re.I):
+            experience.append(line[:200])
+
+    return {
+        "skills": skills[:15],
+        "experience": experience[:5],
+        "summary": text[:500],
+    }
+
+
+def get_interview_questions_from_resume(
+    company_name: str,
+    job_position: str,
+    resume_content: str,
+) -> list[str]:
+    """Generate tailored interview questions from parsed resume."""
+    parsed = parse_resume_for_interview(resume_content)
+    custom = []
+    if company_name:
+        custom.append(f"Why do you want to work at {company_name}?")
+    if job_position:
+        custom.append(f"What experience do you have that relates to {job_position}?")
+    for skill in parsed.get("skills", [])[:3]:
+        custom.append(f"Tell me about a time you used {skill} in a work situation.")
+    return (custom + FRONTLINE_QUESTIONS)[:7]
 
 
 def get_customer_care_feedback(

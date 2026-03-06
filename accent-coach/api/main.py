@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import shutil
 import uuid
@@ -15,9 +16,9 @@ except ImportError:
 
 from typing import Dict, List, Optional
 
-from fastapi import BackgroundTasks, FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import BackgroundTasks, FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 
 from speech import audio, clip, score, tts
 from speech.align import align_words
@@ -30,8 +31,13 @@ from speech.coach import (
     get_gemini_tips,
     get_interview_analysis,
     get_interview_questions,
+    get_interview_questions_from_resume,
+    get_industry_packs,
     get_text_script_feedback_questions,
+    generate_roleplay_scenario,
 )
+from speech.feedback import analyze_pacing, analyze_speech_confidence
+from speech.gamification import compute_streak, compute_total_xp, get_earned_badges, get_suggested_drill
 from speech.phoneme_recognizer import recognize_phonemes
 from speech.transcribe import transcribe
 
@@ -49,11 +55,11 @@ CUSTOMER_CARE_DIR = DATA_DIR / "customer_care"
 for path in [UPLOADS_DIR, JOBS_DIR, CLIPS_DIR, TTS_DIR, SAMPLES_DIR, PRESENTATION_DIR, TEXT_DIR, INTERVIEW_DIR, CUSTOMER_CARE_DIR]:
     path.mkdir(parents=True, exist_ok=True)
 
-app = FastAPI(title="AccentCoach API", version="0.1.0")
+app = FastAPI(title="FrontlineReady API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
-    allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(:\d+)?$",
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:3002"],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$|^https://[a-z0-9-]+\.trycloudflare\.com$|^https://[a-z0-9-]+\.netlify\.app$|^https://[a-z0-9-]+\.fly\.dev$|^https://[a-z0-9-]+\.koyeb\.app$|^https://[a-z0-9-]+\.replit\.dev$|^https://[a-z0-9-]+\.repl\.co$",
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True,
@@ -296,12 +302,18 @@ async def start_interview(
         raise HTTPException(status_code=400, detail="Provide qualifications or upload a resume.")
 
     job_id = f"interview_{uuid.uuid4().hex}"
-    questions = get_interview_questions(
+    questions = get_interview_questions_from_resume(
         company_name=company_name,
         job_position=job_position,
-        company_mission=company_mission or "Not provided",
-        qualifications=quals,
+        resume_content=quals,
     )
+    if not questions:
+        questions = get_interview_questions(
+            company_name=company_name,
+            job_position=job_position,
+            company_mission=company_mission or "Not provided",
+            qualifications=quals,
+        )
     if not questions:
         raise HTTPException(status_code=500, detail="Failed to generate questions.")
 
@@ -384,16 +396,20 @@ def get_interview_job(job_id: str):
 
 
 @app.post("/api/customer-care/start")
-async def start_customer_care(category: str = Form(...)):
-    """Create a customer care practice job. Category must be one of the 7 frontline categories."""
+async def start_customer_care(
+    category: str = Form(...),
+    level: Optional[str] = Form(default=None),
+):
+    """Create a customer care practice job. Category and optional level (beginner, intermediate, advanced)."""
     categories = [
         "Healthcare", "Construction", "Retail", "Food Service",
-        "Hospitality", "Transportation", "Banking & Finance",
+        "Hospitality", "Transportation", "Banking & Finance", "Call Center",
     ]
-    if category not in categories:
+    cat_normalized = "Call Center" if category.lower().replace(" ", "") == "callcenter" else category
+    if cat_normalized not in categories:
         raise HTTPException(status_code=400, detail=f"Invalid category. Choose from: {', '.join(categories)}")
 
-    scenarios = get_customer_care_scenarios(category)
+    scenarios = get_customer_care_scenarios(cat_normalized, level)
     if not scenarios:
         raise HTTPException(status_code=400, detail="No scenarios for this category.")
 
@@ -402,7 +418,8 @@ async def start_customer_care(category: str = Form(...)):
         "status": "in_progress",
         "type": "customer_care",
         "created_at": datetime.utcnow().isoformat() + "Z",
-        "category": category,
+        "category": cat_normalized,
+        "level": level,
         "scenarios": scenarios,
         "replies": [],
     }
@@ -464,8 +481,9 @@ async def complete_customer_care(job_id: str):
     replies = job.get("replies", [])
     transcripts = [r.get("transcript", "") for r in replies if isinstance(r, dict)]
     category = job.get("category", "")
-
+    combined_text = " ".join(transcripts)
     result = get_customer_care_feedback(category, transcripts)
+    result["speech_confidence"] = analyze_speech_confidence(combined_text, words=None, pacing=None)
     job.update(
         {
             "status": "done",
@@ -497,8 +515,211 @@ def get_customer_care_categories():
     """Return the list of available frontline categories."""
     return {"categories": [
         "Healthcare", "Construction", "Retail", "Food Service",
-        "Hospitality", "Transportation", "Banking & Finance",
+        "Hospitality", "Transportation", "Banking & Finance", "Call Center",
     ]}
+
+
+@app.get("/api/industry-packs")
+def get_industry_packs_route():
+    """Return industry-specific scenario packs with levels."""
+    return {"packs": get_industry_packs()}
+
+
+ROLEPLAY_DIR = DATA_DIR / "roleplay"
+ROLEPLAY_DIR.mkdir(parents=True, exist_ok=True)
+
+
+@app.post("/api/roleplay/start")
+async def start_roleplay(
+    job_role: str = Form(...),
+    scenario_type: str = Form(default="customer_complaint"),
+    difficulty: str = Form(default="intermediate"),
+):
+    """Create a custom roleplay session. scenario_type: customer_complaint, policy_explanation, urgent_request."""
+    scenario = generate_roleplay_scenario(job_role, scenario_type, difficulty)
+    job_id = f"roleplay_{uuid.uuid4().hex}"
+    job_record = {
+        "status": "in_progress",
+        "type": "roleplay",
+        "created_at": datetime.utcnow().isoformat() + "Z",
+        "job_role": job_role,
+        "scenario_type": scenario_type,
+        "difficulty": difficulty,
+        "scenarios": [scenario],
+        "replies": [],
+    }
+    _write_job(job_id, job_record)
+    (ROLEPLAY_DIR / job_id).mkdir(parents=True, exist_ok=True)
+    return {"job_id": job_id, "scenario": scenario}
+
+
+@app.get("/api/analytics")
+def get_analytics():
+    """Aggregate scores from all jobs for dashboard. Scans job files."""
+    pronunciation_scores: List[float] = []
+    interview_scores: List[float] = []
+    customer_care_scores: List[float] = []
+    modules_used: set = set()
+    activity_dates: List[str] = []
+
+    for path in JOBS_DIR.glob("*.json"):
+        try:
+            with path.open("r", encoding="utf-8") as fp:
+                job = json.load(fp)
+        except Exception:
+            continue
+        created = job.get("created_at", "")[:10]
+        if created:
+            activity_dates.append(created)
+        stem = str(path.stem)
+        jtype = job.get("type")
+        if not jtype:
+            if stem.startswith("interview_"):
+                jtype = "interview"
+            elif stem.startswith("customercare_"):
+                jtype = "customer_care"
+            elif stem.startswith("roleplay_"):
+                jtype = "roleplay"
+            elif stem.startswith("presentation_") or stem.startswith("text_"):
+                jtype = "presentation" if stem.startswith("presentation_") else "text"
+            else:
+                jtype = "pronunciation"
+        if jtype:
+            modules_used.add(jtype)
+        result = job.get("result")
+        if not result:
+            continue
+        if isinstance(result.get("summary"), dict) and "overall_score" in (result.get("summary") or {}):
+            pronunciation_scores.append(float((result["summary"] or {}).get("overall_score", 0)))
+        if isinstance(result.get("score"), (int, float)):
+            if jtype == "interview":
+                interview_scores.append(float(result["score"]))
+            elif jtype == "customer_care":
+                customer_care_scores.append(float(result["score"]))
+
+    stats = {
+        "sessions_completed": len(pronunciation_scores) + len(interview_scores) + len(customer_care_scores),
+        "pronunciation_scores": pronunciation_scores,
+        "interview_scores": interview_scores,
+        "customer_care_scores": customer_care_scores,
+        "modules_used": list(modules_used),
+        "pronunciation_80_count": sum(1 for s in pronunciation_scores if s >= 80),
+        "pronunciation_90_count": sum(1 for s in pronunciation_scores if s >= 90),
+        "interview_70_count": sum(1 for s in interview_scores if s >= 70),
+        "customer_care_70_count": sum(1 for s in customer_care_scores if s >= 70),
+    }
+    stats["current_streak"] = compute_streak(activity_dates)
+    stats["badges"] = get_earned_badges(stats)
+    scores_map = {
+        "pronunciation": pronunciation_scores,
+        "interview": interview_scores,
+        "customer_care": customer_care_scores,
+    }
+    stats["suggested_drill"] = get_suggested_drill(stats, scores_map)
+    stats["total_xp"] = compute_total_xp(stats, scores_map)
+    return stats
+
+
+@app.post("/api/roleplay/job/{job_id}/reply")
+async def submit_roleplay_reply(
+    job_id: str,
+    reply_index: int = Form(...),
+    audio_file: UploadFile = File(...),
+):
+    """Submit audio reply for roleplay exchange."""
+    job = _read_job(job_id)
+    if job.get("status") != "in_progress":
+        raise HTTPException(status_code=400, detail="Session not in progress")
+    scenarios = job.get("scenarios", [])
+    total = sum(len(s.get("customer_lines", [""])) for s in scenarios)
+    if reply_index < 0 or reply_index >= total:
+        raise HTTPException(status_code=400, detail="Invalid reply index")
+    content = await audio_file.read()
+    job_dir = ROLEPLAY_DIR / job_id
+    job_dir.mkdir(parents=True, exist_ok=True)
+    ext = Path(audio_file.filename or "audio").suffix.lower() or ".webm"
+    audio_path = job_dir / f"reply_{reply_index}{ext}"
+    with audio_path.open("wb") as fp:
+        fp.write(content)
+    wav_path = job_dir / f"reply_{reply_index}.wav"
+    try:
+        audio.convert_to_wav(audio_path, wav_path)
+        t = transcribe(wav_path)
+        transcript_text = t.get("text", "").strip()
+    except Exception:
+        transcript_text = ""
+    replies = job.get("replies", [])
+    while len(replies) <= reply_index:
+        replies.append({"transcript": "", "audio_id": ""})
+    replies[reply_index] = {"transcript": transcript_text, "audio_id": f"{job_id}_reply_{reply_index}"}
+    job["replies"] = replies
+    _write_job(job_id, job)
+    return {"reply_index": reply_index, "transcript": transcript_text}
+
+
+@app.post("/api/roleplay/job/{job_id}/complete")
+async def complete_roleplay(job_id: str):
+    """Complete roleplay and get feedback."""
+    job = _read_job(job_id)
+    if job.get("status") != "in_progress":
+        raise HTTPException(status_code=400, detail="Session not in progress")
+    transcripts = [r.get("transcript", "") for r in (job.get("replies") or []) if isinstance(r, dict)]
+    result = get_customer_care_feedback(job.get("job_role", "Worker"), transcripts)
+    job.update({"status": "done", "completed_at": datetime.utcnow().isoformat() + "Z", "result": result})
+    _write_job(job_id, job)
+    return {"job_id": job_id, "status": "done", "result": result}
+
+
+@app.get("/api/roleplay/job/{job_id}")
+def get_roleplay_job(job_id: str):
+    return _read_job(job_id)
+
+
+@app.get("/api/roleplay/job/{job_id}/audio/{index}")
+def get_roleplay_audio(job_id: str, index: int):
+    job_dir = ROLEPLAY_DIR / job_id
+    wav_path = job_dir / f"reply_{index}.wav"
+    if not wav_path.exists():
+        raise HTTPException(status_code=404, detail="Audio not found")
+    return FileResponse(wav_path, media_type="audio/wav")
+
+
+@app.get("/api/job/{job_id}/stream")
+async def stream_job_updates(job_id: str):
+    """SSE stream for real-time job progress. Client subscribes for live feedback."""
+
+    async def event_generator():
+        last_status = None
+        last_result_len = 0
+        for _ in range(60):
+            try:
+                job = _read_job(job_id)
+            except HTTPException:
+                yield f"data: {json.dumps({'event': 'error', 'detail': 'Job not found'})}\n\n"
+                return
+            status = job.get("status")
+            result = job.get("result") or {}
+            transcript = result.get("transcript") or []
+            summary = result.get("summary") or {}
+            if status != last_status:
+                yield f"data: {json.dumps({'event': 'status', 'status': status})}\n\n"
+                last_status = status
+            if status == "done":
+                yield f"data: {json.dumps({'event': 'done', 'result': {'transcript': transcript, 'summary': summary, 'text': result.get('text', ''), 'pacing': result.get('pacing'), 'confidence': result.get('confidence')}})}\n\n"
+                return
+            if status == "error":
+                yield f"data: {json.dumps({'event': 'error', 'detail': job.get('error', '')})}\n\n"
+                return
+            if len(transcript) > last_result_len:
+                yield f"data: {json.dumps({'event': 'partial', 'transcript': transcript})}\n\n"
+                last_result_len = len(transcript)
+            await asyncio.sleep(0.5)
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
+    )
 
 
 @app.get("/api/interview/job/{job_id}/audio/{index}")
@@ -592,6 +813,9 @@ def _process_job(job_id: str, upload_path: Path) -> None:
         merged_words = _merge_alignment(transcript["words"], aligned_words)
         processed_words = _build_word_payload(job_id, wav_path, merged_words, playback_path=playback_path)
         summary = _summarize_words(processed_words)
+        text = transcript.get("text", "")
+        pacing = analyze_pacing(processed_words)
+        confidence = analyze_speech_confidence(text, processed_words, pacing)
         job.update(
             {
                 "status": "done",
@@ -599,7 +823,9 @@ def _process_job(job_id: str, upload_path: Path) -> None:
                 "result": {
                     "transcript": processed_words,
                     "summary": summary,
-                    "text": transcript.get("text", ""),
+                    "text": text,
+                    "pacing": pacing,
+                    "confidence": confidence,
                 },
             }
         )

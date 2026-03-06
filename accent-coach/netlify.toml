@@ -1,0 +1,10 @@
+# Netlify config for FrontlineReady frontend
+# Set NEXT_PUBLIC_API_BASE in Netlify Site settings > Environment variables
+
+[build]
+  base = "accent-coach/web"
+  command = "npm install && npm run build"
+  environment = { NODE_VERSION = "20" }
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

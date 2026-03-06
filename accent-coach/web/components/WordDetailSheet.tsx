@@ -28,7 +28,7 @@ export function WordDetailSheet({ word, open, onOpenChange }: WordDetailSheetPro
               </Badge>
             </SheetTitle>
             <SheetDescription className="text-base text-slate-700">
-              Score {word.score}/100 · Confidence {Math.round(word.confidence * 100)}%
+              Score {word.score}/100 · Confidence {Math.round((word.confidence ?? 0) * 100)}%
             </SheetDescription>
           </SheetHeader>
         ) : (
@@ -44,8 +44,8 @@ export function WordDetailSheet({ word, open, onOpenChange }: WordDetailSheetPro
             />
             <AudioWavePlayer
               src={coachClip}
-              label="AccentCoach example"
-              emptyText="Example audio shows up when a word needs practice."
+              label="Example pronunciation"
+              emptyText="Example audio appears when a word needs practice."
             />
           </div>
         )}

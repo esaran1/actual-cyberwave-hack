@@ -26,7 +26,6 @@ export function AudioWavePlayer({ src, label, emptyText }: AudioWavePlayerProps)
       progressColor: "#2563eb",
       cursorColor: "transparent",
       height: 56,
-      responsive: true,
     });
     waveSurferRef.current = waveSurfer;
     waveSurfer.on("ready", () => setIsReady(true));

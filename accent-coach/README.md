@@ -1,6 +1,6 @@
-# AccentCoach
+# FrontlineReady
 
-AccentCoach is a friendly pronunciation coach for accented English speakers. Record or upload speech, get faster-whisper transcripts with per-word diagnostics, and listen to targeted example pronunciations generated with Coqui TTS.
+FrontlineReady is a friendly pronunciation and communication coach for accented English speakers. Record or upload speech, get faster-whisper transcripts with per-word diagnostics, and listen to targeted example pronunciations generated with Coqui TTS.
 
 ## Tech stack
 - **Backend:** FastAPI, faster-whisper, ffmpeg, pydub, Coqui TTS

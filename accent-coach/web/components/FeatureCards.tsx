@@ -6,18 +6,18 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    title: "Word-by-word coaching",
-    description: "See clarity scores, supportive tips, and color-coded confidence for every word you spoke.",
+    title: "Clarity scoring",
+    description: "Get word-by-word feedback on pronunciation and delivery—so you know exactly what to improve for interviews and customer interactions.",
     icon: Sparkles,
   },
   {
-    title: "Audio comparisons",
-    description: "Hear your pronunciation next to an AccentCoach example built with expressive TTS.",
+    title: "Hear the difference",
+    description: "Compare your pronunciation with AI-generated examples. Learn by listening—no judgment, just improvement.",
     icon: Ear,
   },
   {
-    title: "Actionable practice",
-    description: "Surface the top sounds to revisit and a short practice list to keep improving.",
+    title: "Practice that pays off",
+    description: "Focus on the sounds that matter most for your role. Build confidence before your next shift or interview.",
     icon: Volume2,
   },
 ];
@@ -25,17 +25,17 @@ const features = [
 const steps = [
   {
     title: "Record or upload",
-    description: "Share a 10–20 second audio sample or try the demo clip.",
+    description: "Share a 10–20 second sample of your speech, or try the demo to see results instantly.",
     icon: Mic,
   },
   {
-    title: "Accent-aware analysis",
-    description: "We normalize audio, run faster-whisper, and label accent-sensitive sounds.",
+    title: "AI-powered analysis",
+    description: "Our models analyze clarity, pacing, and pronunciation—giving you actionable insights.",
     icon: AudioLines,
   },
   {
-    title: "Friendly results",
-    description: "Review the transcript, scores, and listen to coach clips from your browser.",
+    title: "Results you can use",
+    description: "Review your transcript, scores, and practice clips. Turn feedback into real-world readiness.",
     icon: Clock,
   },
 ];
@@ -61,7 +61,7 @@ export function FeatureCards() {
       </div>
       <div id="how-it-works" className="rounded-3xl border border-slate-100 bg-white/70 p-6">
         <p className="text-xs uppercase tracking-[0.3em] text-slate-500">How it works</p>
-        <h2 className="mt-2 text-2xl font-semibold text-slate-900">Three calm steps to clearer pronunciation</h2>
+        <h2 className="mt-2 text-2xl font-semibold text-slate-900">Three steps to workplace-ready communication</h2>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;

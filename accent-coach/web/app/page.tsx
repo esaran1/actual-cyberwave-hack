@@ -82,28 +82,31 @@ export default function HomePage() {
           <input {...getInputProps()} />
           <Upload className="h-10 w-10 text-brand transition group-hover:scale-105" />
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-slate-900">Upload audio for instant feedback</h2>
+            <h2 className="text-2xl font-semibold text-slate-900">Upload audio for instant clarity feedback</h2>
             <p className="mx-auto max-w-xl text-sm text-slate-500">
-              Drop a WAV/MP3/MP4 or click to browse. We normalize to mono 16k WAV before analysis.
+              Drop a WAV/MP3/MP4 or click to browse. We process it locally and return detailed feedback.
             </p>
             <Button size="lg" className="mx-auto mt-4" disabled={isUploading}>
               {isUploading ? "Uploading…" : "Select audio"}
             </Button>
             {error && <p className="text-sm text-rose-600">{error}</p>}
           </div>
-          <p className="mt-6 text-xs uppercase tracking-[0.25em] text-slate-400">Secure local processing</p>
+          <p className="mt-6 text-xs uppercase tracking-[0.25em] text-slate-400">Private · Local processing</p>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
           <Card>
             <CardTitle>Prefer to record live?</CardTitle>
             <CardDescription className="mt-2 text-sm text-slate-600">
-              Launch the recorder for guided capture with waveforms and mic-state controls.
+              Use the recorder for guided practice with waveforms and mic controls.
             </CardDescription>
             <Button asChild className="mt-6 w-full">
               <Link href="/record">Open recorder</Link>
             </Button>
+            <Button asChild variant="outline" className="mt-2 w-full">
+              <Link href="/dashboard">View your progress</Link>
+            </Button>
             <Button variant="ghost" className="mt-2 w-full" onClick={runDemo} disabled={isUploading}>
-              Try demo clip
+              Try demo
             </Button>
           </Card>
         </motion.div>
@@ -118,11 +121,10 @@ export default function HomePage() {
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Reassuring by design</p>
-            <h3 className="mt-1 text-2xl font-semibold">You&apos;re in control</h3>
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Built for your success</p>
+            <h3 className="mt-1 text-2xl font-semibold">Privacy-first, always</h3>
             <p className="max-w-2xl text-sm text-slate-600">
-              AccentCoach never judges accents—we surface clarity hints only when you ask for them. All processing stays on
-              your machine with local models.
+              All processing runs locally on your machine. No cloud uploads, no paid APIs—just you, your practice, and results that help you land and excel in frontline roles.
             </p>
           </div>
           <div className="flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-600">

@@ -1,6 +1,6 @@
 # speech-helper
 
-This repository contains the AccentCoach MVP inside `accent-coach/`.
+This repository contains the FrontlineReady MVP inside `accent-coach/`.
 
 - Project README: `accent-coach/README.md`
 - Docker Compose: `accent-coach/docker-compose.yml`
